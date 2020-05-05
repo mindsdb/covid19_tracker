@@ -54,7 +54,7 @@ const CustomButton = styled.button`
   }
 `
 const common = css`
-  width: 200px;
+  width: 230px;
   height: 50px;
   border-radius: 10px;
   font-size: 16px;
