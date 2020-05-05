@@ -9,6 +9,7 @@ export const Colors = {
   silver: '#CDCDCD',
   silverChalice: '#ABABAB',
   lightGreen: '#40bb7d',
+  linkColor: '#75dbcc',
 }
 
 export default {}

@@ -95,6 +95,12 @@ const ButtonContainer = styled.div`
     margin: 70px auto;
   `)}
 `
+const Href = styled.a`
+  color: ${Colors.linkColor};
+  display: block;
+  margin: 30px;
+  font-weight: 600;
+`
 
 const TestPage = () => {
   const [showForm, setShowForm] = useState(true)
@@ -164,6 +170,9 @@ const TestPage = () => {
                   </Title>
                   <Description>
                     <FormattedMessage id="wizard.finish.description" />
+                    <Href href="https://covid-json-data.s3.amazonaws.com/data.json">
+                      Download Datase
+                    </Href>
                   </Description>
                   <Title
                     marginTop="50px"

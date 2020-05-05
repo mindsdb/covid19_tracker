@@ -33,6 +33,12 @@ const FooterList = styled.ul`
 const Href = styled.a`
   color: ${Colors.lightGreen};
 `
+const centerItems = css`
+  display: inline-flex;
+  div:last-child {
+    margin-left: 50px;
+  }
+`
 
 const Footer = (props) => {
   return (
@@ -40,25 +46,37 @@ const Footer = (props) => {
       <BottomContainer className="row">
         <div className="container">
           <div className="row">
-            <div className="col-xs-12 col-md-12">
-              <strong><FormattedMessage id="footer.minds.title" /></strong>
-              <FooterList>
-                <li>
-                  <Href href="">
-                    <FormattedMessage id="footer.minds.link1" />
-                  </Href>
-                </li>
-                <li>
-                  <Href href="">
-                    <FormattedMessage id="footer.minds.link2" />
-                  </Href>
-                </li>
-                <li>
-                  <Href href="">
-                    <FormattedMessage id="footer.minds.link3" />
-                  </Href>
-                </li>
-              </FooterList>
+            <div className="col-xs-12 col-md-6" css={centerItems}>
+              <div>
+                <strong><FormattedMessage id="footer.minds.title" /></strong>
+                <FooterList>
+                  <li>
+                    <Href href="">
+                      <FormattedMessage id="footer.minds.link1" />
+                    </Href>
+                  </li>
+                  <li>
+                    <Href href="">
+                      <FormattedMessage id="footer.minds.link2" />
+                    </Href>
+                  </li>
+                  <li>
+                    <Href href="">
+                      <FormattedMessage id="footer.minds.link3" />
+                    </Href>
+                  </li>
+                </FooterList>
+              </div>
+              <div>
+                <strong>Dataset</strong>
+                <FooterList>
+                  <li>
+                    <Href href="https://covid-json-data.s3.amazonaws.com/data.json">
+                      Download
+                    </Href>
+                  </li>
+                </FooterList>
+              </div>
             </div>
             <div className="col-xs-6 col-md-10">
               <span>® 2020 MindsDB. All rights reserved.</span>
