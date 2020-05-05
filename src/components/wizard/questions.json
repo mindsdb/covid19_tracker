@@ -22,7 +22,7 @@
     },
     {
       "page": 5,
-      "question": "Do you have hypertension?",
+      "question": "Do you have hypertension? (High Blood Pressure)",
       "name": "hypertension",
       "type": "radio",
       "options": [
@@ -32,7 +32,7 @@
     },
     {
       "page": 6,
-      "question": "Do you have diabetes?",
+      "question": "Do you have diabetes? (Type 1 or Type 2)",
       "name": "diabetes",
       "type": "radio",
       "options": [
@@ -42,7 +42,7 @@
     },
     {
       "page": 7,
-      "question": "Do you have coronary heart desease?",
+      "question": "Do you have coronary heart disease?",
       "name": "coronaryHeartDesease",
       "type": "radio",
       "options": [
@@ -72,7 +72,7 @@
     },
     {
       "page": 10,
-      "question": "Do you have cough?",
+      "question": "Do you have a cough?",
       "name": "cough",
       "type": "radio",
       "options": [
@@ -82,7 +82,7 @@
     },
     {
       "page": 11,
-      "question": "Do you have sputum?",
+      "question": "Do you have sputum? Do you have a cough that is producing mucus/phlegm?",
       "name": "sputum",
       "type": "radio",
       "options": [
@@ -92,21 +92,21 @@
     },
     {
       "page": 12,
-      "question": "Respiratory rate > 24 Breaths per min?",
+      "question": "What is your respiratory rate?",
       "name": "respiratoryRate",
-      "placeholder": "Respiratory Rate",
+      "placeholder": "How many breaths you take per minute",
       "type": "number"
     },
     {
       "page": 13,
-      "question": "Fever (Temperature ≥ 37·3°C) ?",
+      "question": "What is your Temperature?",
       "name": "fever",
-      "placeholder": "Fever Temperature",
+      "placeholder": "e.g. 37°C/98.6°F",
       "type": "number"
     },
     {
       "page": 14,
-      "question": "Do you have myalgia?",
+      "question": "Do you have myalgia? Are you experiencing any muscle aches or pain?",
       "name": "myalgia",
       "type": "radio",
       "options": [
@@ -126,7 +126,7 @@
     },
     {
       "page": 16,
-      "question": "Do you have diarrhoea?",
+      "question": "Do you have diarrhea?",
       "name": "diarrhoea",
       "type": "radio",
       "options": [
@@ -136,7 +136,7 @@
     },
     {
       "page": 17,
-      "question": "Are you exposed?",
+      "question": "Have you been in contact with people recently traveling or people that may have the virus?",
       "name": "exposed",
       "type": "radio",
       "options": [
