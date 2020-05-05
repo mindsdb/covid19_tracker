@@ -38,9 +38,9 @@
   "wizard.previous.button": "PREVIOUS QUESTION",
   "wizard.submit.button": "SUBMIT",
 
-  "wizard.finish.title": "We Don’t Have Enought Information On Your Location to Provide Futher Insights.",
-  "wizard.finish.description": "Please help us by sharing this to your neighbors and friends all over the world, rememember all data gather here is available at:",
-  "wizard.finish.description.strong.part1": "THANKS FOR HELPING",
+  "wizard.finish.title": "We Don’t Have Enough Information On Your Location to Provide Further Insights.",
+  "wizard.finish.description": "Please help us by sharing this census with your neighbors and friends all over the world. All of the gathered census data is available at:",
+  "wizard.finish.description.strong.part1": "THANK YOU FOR HELPING",
   "wizard.finish.description.strong.part2": "SAVE",
   "wizard.finish.description.strong.part3": "LIVES",
   "wizard.finish.button": "SHARE LINK"
