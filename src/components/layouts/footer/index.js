@@ -10,13 +10,13 @@ import { mq } from '@/components/layouts/utils/base'
 import { Colors } from '@/components/layouts/utils/theme'
 
 const logoContainer = css`
-  display: inline-flex;
+  display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-end;
+  justify-content: start;
+  align-items: end;
 
   .last-logo {
-    margin: 30px;
+    margin: 13px 20px;
   }
 `
 const Container = styled.footer`
