@@ -21,7 +21,7 @@ const BackgroundContent = ({ className, children }) => {
         query {
           device: file(relativePath: { eq: "banner.png" }) {
             childImageSharp {
-              fluid(quality: 90) {
+              fluid(quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }
