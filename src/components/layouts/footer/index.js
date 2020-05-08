@@ -94,17 +94,17 @@ const Footer = (props) => {
                 <strong><FormattedMessage id="footer.minds.title" /></strong>
                 <FooterList>
                   <li>
-                    <Href href="">
+                    <Href href="https://www.mindsdb.com/policies/privacy-policy" target="_blank">
                       <FormattedMessage id="footer.minds.link1" />
                     </Href>
                   </li>
                   <li>
-                    <Href href="">
+                    <Href href="https://www.mindsdb.com/policies/cookie-policy" target="_blank">
                       <FormattedMessage id="footer.minds.link2" />
                     </Href>
                   </li>
                   <li>
-                    <Href href="">
+                    <Href href="https://www.mindsdb.com/policies/terms" target="_blank">
                       <FormattedMessage id="footer.minds.link3" />
                     </Href>
                   </li>

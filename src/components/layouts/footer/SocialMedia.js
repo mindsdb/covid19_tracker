@@ -23,7 +23,7 @@ const SocialMedia = () => (
       </a>
     </li>
     <li>
-      <a rel="noopener noreferrer" target="_blank" className="facebook" href="https://github.com/mindsdb">
+      <a rel="noopener noreferrer" target="_blank" className="facebook" href="https://github.com/mindsdb/covid19_tracker">
         <FaGithub/>
       </a>
     </li>
