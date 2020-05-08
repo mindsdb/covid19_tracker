@@ -92,14 +92,14 @@ const WizardFormDynamicPage = props => {
     if (stepProps.type === 'radio') {
       return (
         <QuestionContainer>
-          <span>{stepProps.question}</span>
+          <span><FormattedMessage id={stepProps.question} /></span>
           <RadioContainer>
             <RadioOptions>
               {
                 stepProps.options.map((item, idx) => (
                   <Label htmlFor={item} key={idx}>
                     <Field
-                      id={item}
+                      id={idx}
                       name={stepProps.name}
                       component="input"
                       type="radio"
@@ -122,7 +122,7 @@ const WizardFormDynamicPage = props => {
           name={stepProps.name}
           type="number"
           component={renderField}
-          label={<strong css={CustomInputText}>{stepProps.question}</strong>}
+          label={<strong css={CustomInputText}><FormattedMessage id={stepProps.question} /></strong>}
           placeholder={stepProps.placeholder}
         />
       )

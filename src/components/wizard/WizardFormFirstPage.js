@@ -72,7 +72,7 @@ const WizardFormFirstPage = props => {
   return (
     <Form onSubmit={handleSubmit}>
       <Title marginBottom="30px" max="10" min="25" color="black">
-        How are you feeling?
+        <FormattedMessage id="wizard.static.question1" />
       </Title>
       <QuestionContainer>
         <RadioContainer>
@@ -84,7 +84,7 @@ const WizardFormFirstPage = props => {
                 type="radio"
                 value="Great"
               />
-              <FaThumbsUp /> Great, thanks!
+              <FaThumbsUp /><FormattedMessage id="wizard.static.answer1" />
             </Label>
           </RadioOptions>
           <RadioOptions>
@@ -95,7 +95,7 @@ const WizardFormFirstPage = props => {
                 type="radio"
                 value="Not feeling well"
               />
-              <FaThumbsDown /> Not feeling well
+              <FaThumbsDown /> <FormattedMessage id="wizard.static.answer2" />
             </Label>
           </RadioOptions>
           <Field name="feeling" component={renderError} />

@@ -2,7 +2,7 @@
   "questions": [
     {
       "page": 3,
-      "question": "What is you gender?",
+      "question": "wizard.dynamic.question1",
       "name": "gender",
       "type": "radio",
       "options": [
@@ -12,7 +12,7 @@
     },
     {
       "page": 4,
-      "question": "Are you smoker?",
+      "question": "wizard.dynamic.question2",
       "name": "smoker",
       "type": "radio",
       "options": [
@@ -22,7 +22,7 @@
     },
     {
       "page": 5,
-      "question": "Do you have hypertension? (High Blood Pressure)",
+      "question": "wizard.dynamic.question3",
       "name": "hypertension",
       "type": "radio",
       "options": [
@@ -32,7 +32,7 @@
     },
     {
       "page": 6,
-      "question": "Do you have diabetes? (Type 1 or Type 2)",
+      "question": "wizard.dynamic.question4",
       "name": "diabetes",
       "type": "radio",
       "options": [
@@ -42,7 +42,7 @@
     },
     {
       "page": 7,
-      "question": "Do you have coronary heart disease?",
+      "question": "wizard.dynamic.question5",
       "name": "coronaryHeartDesease",
       "type": "radio",
       "options": [
@@ -52,7 +52,7 @@
     },
     {
       "page": 8,
-      "question": "Do you have fatigue?",
+      "question": "wizard.dynamic.question6",
       "name": "fatigue",
       "type": "radio",
       "options": [
@@ -62,7 +62,7 @@
     },
     {
       "page": 9,
-      "question": "Do you have breathing problems?",
+      "question": "wizard.dynamic.question7",
       "name": "breathingProblems",
       "type": "radio",
       "options": [
@@ -72,7 +72,7 @@
     },
     {
       "page": 10,
-      "question": "Do you have a cough?",
+      "question": "wizard.dynamic.question8",
       "name": "cough",
       "type": "radio",
       "options": [
@@ -82,7 +82,7 @@
     },
     {
       "page": 11,
-      "question": "Do you have sputum? Do you have a cough that is producing mucus/phlegm?",
+      "question": "wizard.dynamic.question9",
       "name": "sputum",
       "type": "radio",
       "options": [
@@ -92,21 +92,21 @@
     },
     {
       "page": 12,
-      "question": "What is your respiratory rate?",
+      "question": "wizard.dynamic.question10",
       "name": "respiratoryRate",
       "placeholder": "How many breaths you take per minute",
       "type": "number"
     },
     {
       "page": 13,
-      "question": "What is your Temperature?",
+      "question": "wizard.dynamic.question11",
       "name": "fever",
       "placeholder": "e.g. 37°C/98.6°F",
       "type": "number"
     },
     {
       "page": 14,
-      "question": "Do you have myalgia? Are you experiencing any muscle aches or pain?",
+      "question": "wizard.dynamic.question12",
       "name": "myalgia",
       "type": "radio",
       "options": [
@@ -116,7 +116,7 @@
     },
     {
       "page": 15,
-      "question": "Do you have nausea or vomiting?",
+      "question": "wizard.dynamic.question13",
       "name": "nausea",
       "type": "radio",
       "options": [
@@ -126,7 +126,7 @@
     },
     {
       "page": 16,
-      "question": "Do you have diarrhea?",
+      "question": "wizard.dynamic.question14",
       "name": "diarrhoea",
       "type": "radio",
       "options": [
@@ -136,7 +136,7 @@
     },
     {
       "page": 17,
-      "question": "Have you been in contact with people recently traveling or people that may have the virus?",
+      "question": "wizard.dynamic.question14",
       "name": "exposed",
       "type": "radio",
       "options": [

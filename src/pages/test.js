@@ -171,7 +171,7 @@ const TestPage = () => {
                   <Description>
                     <FormattedMessage id="wizard.finish.description" />
                     <Href href="https://covid-json-data.s3.amazonaws.com/data.json">
-                      Download Datase
+                      Download Dataset
                     </Href>
                   </Description>
                   <Title

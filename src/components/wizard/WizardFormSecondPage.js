@@ -95,7 +95,7 @@ const WizardFormSecondPage = props => {
   return (
     <Form onSubmit={handleSubmit}>
       <Title marginBottom="30px" max="10" min="25" color="black">
-        WHERE ARE YOU LOCATED?
+       <FormattedMessage id="wizard.static.question2" />
       </Title>
       <>
         <GooglePlacesAutocomplete

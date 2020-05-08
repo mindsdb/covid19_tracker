@@ -2,15 +2,31 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import { FormattedMessage } from 'react-intl'
+import { useStaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 import SocialMedia from './SocialMedia'
 import { mq } from '@/components/layouts/utils/base'
 import { Colors } from '@/components/layouts/utils/theme'
 
+const logoContainer = css`
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+
+  .last-logo {
+    margin: 30px;
+  }
+`
 const Container = styled.footer`
   width: 100%;
-  height: 200px;
+  height: 260px;
   color: rgba(93, 105, 112, 50);
+
+  ${mq.md(css`
+    height: 200px;
+  `)}
 `
 const BottomContainer = styled.div`
   height: 80px;
@@ -39,14 +55,41 @@ const centerItems = css`
     margin-left: 50px;
   }
 `
+const Logos = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      skyAlertImage: file(relativePath: { eq: "skyalert-logo.png" }) {
+        childImageSharp {
+          fixed(width: 109, height: 60) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      
+      mindsdbImage: file(relativePath: { eq: "mindsdb-logo.png" }) {
+        childImageSharp {
+          fixed(width: 113, height: 20) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+
+    }
+  `)
+
+  return data
+}
+
 
 const Footer = (props) => {
+  const images = Logos()
+
   return (
     <Container className="container-fluid">
       <BottomContainer className="row">
         <div className="container">
           <div className="row">
-            <div className="col-xs-12 col-md-6" css={centerItems}>
+            <div className="col-xs-12 col-md-8" css={centerItems}>
               <div>
                 <strong><FormattedMessage id="footer.minds.title" /></strong>
                 <FooterList>
@@ -77,6 +120,10 @@ const Footer = (props) => {
                   </li>
                 </FooterList>
               </div>
+            </div>
+            <div className="col-xs-12 col-md-4" css={logoContainer}>
+              <Img fixed={images.skyAlertImage.childImageSharp.fixed} />
+              <Img fixed={images.mindsdbImage.childImageSharp.fixed} className="last-logo" />
             </div>
             <div className="col-xs-6 col-md-10">
               <span>® 2020 MindsDB. All rights reserved.</span>
