@@ -8,10 +8,8 @@
   "banner.rigthSection.description1": "Atención: Si tú crees tener una emergecia grave, contacta a tu médico inmediatamente o llama al teléfono local de emergencias.",
   "banner.rigthSection.description2": "Recuerda: Las autoridades locales y federales cuentan con la información más actualizada de contagios de COVID-19 en tu localidad. Ellos están mejor situados para dar inidicaciones a la gente de tu localidad de lo que deberían hacer para protegerse a sí mismos.",
   "banner.rigthSection.button": "EMPEZAR CUESTIONARIO",
-​
   "common.yes" : "Sí",
   "common.no" : "No",
-​
   "howprotect.title": "SÉ PARTE DE LA",
   "howprotect.title.cure": "CURA",
   "howprotect.washyourhands.title": "Lávate las Manos",
@@ -30,12 +28,10 @@
   "howprotect.right.description": "Mantente informado de las últimas noticias sobre COVID-19. Sigue los consejos de tu médico, tu autoridad de salud local y federal y tu empleador sobre cómo protegerte a tí mismo y a los demás de COVID-19.",
   "howprotect.right.title.button1": "CONSEJOS DE LA ORGANIZACIÓN MUNDIAL DE LA SALUD",
   "howprotect.right.title.button2": "CÓMO FUNCIONA",
-​
   "wizard.static.question1": "Cómo te sientes?",
   "wizard.static.answer1": "Bien, gracias",
   "wizard.static.answer2": "No me siento bien",
   "wizard.static.question2": "¿EN DÓNDE TE ENCUENTRAS?",
-​
   "wizard.dynamic.question1": "¿Cuál es tu género?",
   "wizard.dynamic.question2": "¿Fumas?",
   "wizard.dynamic.question3": "¿Tiene hypertension? (Presión arterial alta)",
@@ -51,17 +47,14 @@
   "wizard.dynamic.question13": "¿Tiene nausea o vómito?",
   "wizard.dynamic.question14": "¿Tiene diarrea?",
   "wizard.dynamic.question15": "¿Ha estado en contacto con personas que han viajado recientemente o con personas que pueden tener el virus?",
-​
   "footer.minds.title": "Políticas",
   "footer.minds.link1": "Política de Privacidad",
   "footer.minds.link2": "Política de Cookies",
   "footer.minds.link3": "Términos",
   "footer.minds.description.email": "support@mindsdb.com",
-​
   "wizard.next.button": "SIGUIENTE PREGUNTA",
   "wizard.previous.button": "PREGUNTA ANTERIOR",
   "wizard.submit.button": "ENVIAR",
-​
   "wizard.finish.title": "No tenemos suficiente información sobre su ubicación para proporcionarle más información.",
   "wizard.finish.description": "Por favor, ayúdenos compartiendo este cuestionario con sus vecinos y amigos de todo el mundo. Todos los datos recopilados del censo están disponibles en:",
   "wizard.finish.description.strong.part1": "GRACIAS POR AYUDAR",
