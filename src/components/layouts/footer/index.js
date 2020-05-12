@@ -22,7 +22,7 @@ const logoContainer = css`
 const Container = styled.footer`
   width: 100%;
   height: 260px;
-  color: rgba(93, 105, 112, 50);
+  color: ${Colors.silverChalice};
 
   ${mq.md(css`
     height: 200px;
@@ -47,7 +47,8 @@ const FooterList = styled.ul`
   margin-left: 0px;
 `
 const Href = styled.a`
-  color: ${Colors.lightGreen};
+  color: ${Colors.silverChalice};
+  text-decoration: none;
 `
 const centerItems = css`
   display: inline-flex;

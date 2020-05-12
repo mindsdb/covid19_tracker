@@ -108,6 +108,8 @@ const CaptchaContainer = styled.div`
 const customDescription = css`
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   font-weight: bold;
+  line-height: 1.1;
+
 `
 const SepareteSpan = styled.span`
   margin: 10px;

@@ -71,7 +71,7 @@ const WizardFormFirstPage = props => {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <Title marginBottom="30px" max="10" min="25" color="black">
+      <Title marginBottom="30px" max="10" min="25" color={Colors.mirage} >
         <FormattedMessage id="wizard.static.question1" />
       </Title>
       <QuestionContainer>

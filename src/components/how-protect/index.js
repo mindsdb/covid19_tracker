@@ -85,10 +85,11 @@ const HowProtect = () => {
               <FormattedMessage id="howprotect.washyourhands.title" />
             </Title>
             <Description
-              textAlign="left"
+              textAlign="justify"
               color={Colors.mirage}
               max="10"
               min="16"
+              marginBottom="2rem"
             >
               <FormattedMessage id="howprotect.washyourhands.description" />
             </Description>
@@ -104,10 +105,11 @@ const HowProtect = () => {
               <FormattedMessage id="howprotect.dontouchyourface.title" />
             </Title>
             <Description
-              textAlign="left"
+              textAlign="justify"
               color={Colors.mirage}
               max="10"
               min="16"
+              marginBottom="2rem"
             >
               <FormattedMessage id="howprotect.dontouchyourface.description" />
             </Description>
@@ -123,10 +125,11 @@ const HowProtect = () => {
               <FormattedMessage id="howprotect.avoid.title" />
             </Title>
             <Description
-              textAlign="left"
+              textAlign="justify"
               color={Colors.mirage}
               max="10"
               min="16"
+              marginBottom="2rem"
             >
               <FormattedMessage id="howprotect.avoid.description" />
             </Description>
@@ -142,10 +145,11 @@ const HowProtect = () => {
               <FormattedMessage id="howprotect.respitory.title" />
             </Title>
             <Description
-              textAlign="left"
+              textAlign="justify"
               color={Colors.mirage}
               max="10"
               min="16"
+              marginBottom="2rem"
             >
               <FormattedMessage id="howprotect.respitory.description" />
             </Description>
@@ -161,10 +165,11 @@ const HowProtect = () => {
               <FormattedMessage id="howprotect.cough.title" />
             </Title>
             <Description
-              textAlign="left"
+              textAlign="justify"
               color={Colors.mirage}
               max="10"
               min="16"
+              marginBottom="2rem"
             >
               <FormattedMessage id="howprotect.cough.description" />
             </Description>

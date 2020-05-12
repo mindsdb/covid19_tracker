@@ -7,12 +7,11 @@ import { Colors } from '@/components/layouts/utils/theme'
 const CustomSocialMedia = styled.ul`
   list-style-type: none;
   display: inline-flex;
-  margin-top: 20px;
-
+  
   li {
     margin: 0 15px;
   }
-  a { color: ${Colors.mirage}} 
+  a { color: ${Colors.silverChalice}} 
 `
 
 const SocialMedia = () => (

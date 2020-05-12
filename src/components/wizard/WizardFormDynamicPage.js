@@ -76,6 +76,11 @@ const RequieredSpan = styled.p`
   color: ${Colors.burntSienna};
 `
 
+const TitleQuestion = styled.span`
+  color: ${Colors.mirage};
+`
+
+
 const renderError = ({ meta: { touched, error } }) =>
   touched && error ? <RequieredSpan>{error}</RequieredSpan> : false
 
@@ -88,11 +93,13 @@ const WizardFormDynamicPage = props => {
     submitting,
   } = props
 
+
+
   const validateField = () => {
     if (stepProps.type === 'radio') {
       return (
         <QuestionContainer>
-          <span><FormattedMessage id={stepProps.question} /></span>
+          <TitleQuestion><FormattedMessage id={stepProps.question} />HOLA</TitleQuestion>
           <RadioContainer>
             <RadioOptions>
               {

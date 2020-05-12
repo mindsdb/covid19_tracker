@@ -7,11 +7,13 @@ import { makeResponsive } from "@/components/layouts/utils/base"
 const CustomDescription = styled.p`
   font-family: "Karla", sans-serif;
   color: ${props => props.color || Colors.mirage};
-  text-align: ${props => props.textAlign || "center"};
+  text-align: ${props => props.textAlign || "justify"};
   margin-top: ${props => props.marginTop || "0px"};
   margin-bottom: ${props => props.marginBottom || "0px"};
   padding: ${props => props.padding || "0px"};
   width: ${props => props.width || "auto"};
+  line-height: ${props => props.width || "1.5"};
+
 
   ${props =>
     makeResponsive([
@@ -36,6 +38,7 @@ const Description = props => {
     max,
     padding,
     width,
+    lineHeight,
   } = props
 
   return (
@@ -49,6 +52,7 @@ const Description = props => {
       max={max || 18}
       padding={padding}
       width={width}
+      lineHeight={lineHeight}
     >
       {children}
     </CustomDescription>
