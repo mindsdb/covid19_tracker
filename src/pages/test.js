@@ -94,11 +94,16 @@ const Description = styled.p`
 const WizardContainer = styled.div`
   background: white;
   margin: 20px 0;
-  max-height: 560px;
   padding: 30px;
   border-radius: 5px;
+  max-height: 560px;
+  overflow: scroll;
   box-shadow: 4px 4px 11px -7px rgba(0, 0, 0, 0.8);
   border: solid 1px rgba(93, 105, 112, 0.3);
+
+  ${mq.md(css`
+    overflow: none;
+  `)}
 `
 const HighlightTitle = styled.span`
   color: white;
@@ -131,10 +136,14 @@ const Href = styled.a`
   font-weight: 600;
 `
 const paddingPie = css`
-  padding: 0 0 0 70px;
+  ${mq.md(css`
+    padding: 0 0 0 70px;
+  `)}
 `
 const paddingMessage = css`
-  padding: 80px 60px 10px 0px;
+ ${mq.md(css`
+    padding: 80px 60px 10px 0px;
+  `)}
 `
 
 const TestPage = () => {
@@ -171,7 +180,7 @@ const TestPage = () => {
 
         const country = values?.country.normalize ("NFKD").replace (/[\u0300-\u036F]/g, "")
         setCountry(country === "United State" || country === "Estados Unidos" ? "usa" : country)
-        
+
         Cookies.set("mindsDBCovid", "completed")
         Cookies.set("mindsDBCovidCount", parseInt(mindsDBCovidCount) + 1)
 
