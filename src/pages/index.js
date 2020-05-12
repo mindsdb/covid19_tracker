@@ -15,7 +15,6 @@ const IndexPage = ({ pageContext: { locale } }) => {
 
       <BannerComponent urlPrefix={urlPrefix} />
       <HowProtect />
-
     </>
   )
 }
