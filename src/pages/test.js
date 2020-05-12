@@ -17,26 +17,31 @@ import Title from "@/components/ui/Title"
 import SEO from "../components/seo"
 import flattenObject from "../lib/utils"
 
-const data = [
-  
-  {
-    "id": "Recovered",
-    "label": "Recovered",
-    "value": 30,
-    "color": "hsl(179, 70%, 50%)"
-  },
+const data = (covidData) => [
   {
     "id": "Critical",
     "label": "Critical",
-    "value": 12,
-    "color": "hsl(179, 70%, 50%)"
+    "value": covidData?.critical,
+    "color": "hsl(1, 70%, 50%)"
   },
   {
     "id": "Active",
     "label": "Active",
-    "value": 80,
-    "color": "hsl(139, 70%, 50%)"
-  }
+    "value": covidData?.active,
+    "color": "hsl(213, 70%, 50%)"
+  },
+  {
+    "id": "Recovered",
+    "label": "Recovered",
+    "value": covidData?.recovered,
+    "color": "hsl(250, 70%, 50%)"
+  },
+  {
+    "id": "Deaths",
+    "label": "Deaths",
+    "value": covidData?.deaths,
+    "color": "hsl(228, 70%, 50%)"
+  },
 ]
 
 const BackgroundContent = ({ className, children }) => {
@@ -89,6 +94,7 @@ const Description = styled.p`
 const WizardContainer = styled.div`
   background: white;
   margin: 20px 0;
+  max-height: 560px;
   padding: 30px;
   border-radius: 5px;
   box-shadow: 4px 4px 11px -7px rgba(0, 0, 0, 0.8);
@@ -124,21 +130,25 @@ const Href = styled.a`
   margin: 30px;
   font-weight: 600;
 `
+const paddingPie = css`
+  padding: 0 0 0 70px;
+`
+const paddingMessage = css`
+  padding: 80px 60px 10px 0px;
+`
 
 const TestPage = () => {
   const [showForm, setShowForm] = useState(true)
   const [likCopied, setlikCopied] = useState(false)
   const [mapsData, setMapsData] = useState()
   const [covidData, setCovidData] = useState([])
+  const [country, setCountry] = useState()
 
   useEffect(() => {
-    fetch('https://coronavirus-19-api.herokuapp.com/countries/Colombia')
+    fetch(`https://coronavirus-19-api.herokuapp.com/countries/${country}`)
       .then(res => res.json())
-      .then(cases => {
-        debugger
-        setCovidData(cases)
-      })
-  }, [])
+      .then(cases => setCovidData(cases))
+  }, [country])
 
   const updateMapsData = data => {
     setMapsData(data)
@@ -159,6 +169,9 @@ const TestPage = () => {
           ? Cookies.get("mindsDBCovidCount")
           : 0
 
+        const country = values?.country.normalize ("NFKD").replace (/[\u0300-\u036F]/g, "")
+        setCountry(country === "United State" || country === "Estados Unidos" ? "usa" : country)
+        
         Cookies.set("mindsDBCovid", "completed")
         Cookies.set("mindsDBCovidCount", parseInt(mindsDBCovidCount) + 1)
 
@@ -189,7 +202,7 @@ const TestPage = () => {
             </div>
             <div className="col-xs-12 col-md-12">
               {/* Wizard */}
-              {!showForm ? (
+              {showForm ? (
                 <WizardContainer>
                   <WizardForm
                     updateMapsData={updateMapsData}
@@ -197,56 +210,58 @@ const TestPage = () => {
                   />
                 </WizardContainer>
               ) : (
-                <WizardContainer className="container">
-                  <div className="row">
-                    <div className="col-xs-12 col-md-4">
-                      <Title marginTop="60px" max="10" min="20" color={Colors.mirage} textAlign="left">
-                      <FormattedMessage id="wizard.confirmed.title" />:
-                      </Title>
-                      <Pie height={500} data={data}/>
-                    </div>
-                    <div className="col-xs-12 col-md-8">
-                      <Title marginTop="40px" marginBottom="40px" max="10" min="20" >
-                        <FormattedMessage id="wizard.finish.title" />
-                      </Title>
-                      <Description>
-                        <FormattedMessage id="wizard.finish.description" />
-                        <Href href="https://covid-json-data.s3.amazonaws.com/data.json">
-                          Download Dataset
-                        </Href>
-                      </Description>
-                      <Title
-                        marginTop="50px"
-                        marginBottom="30px"
-                        max="10"
-                        min="28"
-                        color="black"
-                      >
-                        <FormattedMessage id="wizard.finish.description.strong.part1" />
-                        <ThanksColor>
+                  <WizardContainer className="container">
+                    <div className="row">
+                      <div className="col-xs-12 col-md-5">
+                        <div css={paddingPie}>
+                          <Title marginTop="60px" max="10" min="20" color={Colors.mirage} textAlign="left">
+                            <FormattedMessage id="wizard.confirmed.title" />: <span>{covidData?.cases}</span>
+                          </Title>
+                          <br />
+                          <Pie height={390} data={data(covidData)}/>
+                        </div>
+                      </div>
+                      <div className="col-xs-12 col-md-7">
+                        <div css={paddingMessage}>
+                          <Description>
+                            <FormattedMessage id="wizard.finish.description" />
+                            <Href href="https://covid-json-data.s3.amazonaws.com/data.json">
+                              Download Dataset
+                          </Href>
+                          </Description>
+                          <Title
+                            marginTop="50px"
+                            marginBottom="30px"
+                            max="10"
+                            min="28"
+                            color="black"
+                          >
+                            <FormattedMessage id="wizard.finish.description.strong.part1" />
+                            <ThanksColor>
+                              &nbsp;
+                            <FormattedMessage id="wizard.finish.description.strong.part2" />
+                            &nbsp;
+                          </ThanksColor>
+                            <FormattedMessage id="wizard.finish.description.strong.part3" />
+                          </Title>
+                          <ButtonContainer>
+                            <Button
+                              type="button"
+                              stylesType="common"
+                              backgroundColor={Colors.lightGreen}
+                              backgroundColorHover={Colors.white}
+                              callback={copyTextToClipboard}
+                            >
+                              <FormattedMessage id="wizard.finish.button" />
+                            </Button>
                           &nbsp;
-                          <FormattedMessage id="wizard.finish.description.strong.part2" />
-                          &nbsp;
-                        </ThanksColor>
-                        <FormattedMessage id="wizard.finish.description.strong.part3" />
-                      </Title>
-                      <ButtonContainer>
-                        <Button
-                          type="button"
-                          stylesType="common"
-                          backgroundColor={Colors.lightGreen}
-                          backgroundColorHover={Colors.white}
-                          callback={copyTextToClipboard}
-                        >
-                          <FormattedMessage id="wizard.finish.button" />
-                        </Button>
-                        &nbsp;
-                        {likCopied && <strong>Copied!</strong>}
-                      </ButtonContainer>
+                          {likCopied && <strong>Copied!</strong>}
+                          </ButtonContainer>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </WizardContainer>
-              )}
+                  </WizardContainer>
+                )}
             </div>
           </div>
         </div>

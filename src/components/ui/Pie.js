@@ -50,7 +50,7 @@ const Pie = (props) => (
       fill={[
         {
           match: { id: 'Recovered' },
-          id: 'dots'
+          id: 'lines'
         },
         {
           match: { id: 'Critical' },
@@ -58,6 +58,10 @@ const Pie = (props) => (
         },
         {
           match: { id: 'Active' },
+          id: 'lines'
+        }, 
+        {
+          match: { id: 'Deaths' },
           id: 'dots'
         },
       ]}
