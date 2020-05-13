@@ -98,6 +98,9 @@ const WizardFormSecondPage = props => {
       <Title marginBottom="30px" max="10" min="25" color={Colors.mirage} >
        <FormattedMessage id="wizard.static.question2" />
       </Title>
+      <span>
+       <FormattedMessage id="wizard.static.question2.note" />
+      </span>
       <>
         <GooglePlacesAutocomplete
           apiKey={process.env.GATSBY_GOOGLE_MAPS_API_KEY}

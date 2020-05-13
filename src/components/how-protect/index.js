@@ -22,7 +22,7 @@ const InformedContainer = styled.div`
 
   .title-informed {
     background: ${Colors.lightGreen};
-    width: 310px;
+    width: 380px;
     margin: 0 auto;
 
     strong {

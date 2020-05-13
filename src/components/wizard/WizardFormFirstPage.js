@@ -3,7 +3,6 @@ import { Field, reduxForm } from "redux-form"
 import styled from "@emotion/styled"
 import { css } from "@emotion/core"
 import { FormattedMessage } from "react-intl"
-import { FaThumbsUp, FaThumbsDown } from "react-icons/fa"
 
 import Title from "@/components/ui/Title"
 import validate from "./validate"
@@ -84,7 +83,7 @@ const WizardFormFirstPage = props => {
                 type="radio"
                 value="Great"
               />
-              <FaThumbsUp /><FormattedMessage id="wizard.static.answer1" />
+              <FormattedMessage id="wizard.static.answer1" />
             </Label>
           </RadioOptions>
           <RadioOptions>
@@ -95,7 +94,7 @@ const WizardFormFirstPage = props => {
                 type="radio"
                 value="Not feeling well"
               />
-              <FaThumbsDown /> <FormattedMessage id="wizard.static.answer2" />
+              <FormattedMessage id="wizard.static.answer2" />
             </Label>
           </RadioOptions>
           <Field name="feeling" component={renderError} />

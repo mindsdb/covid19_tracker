@@ -3,18 +3,17 @@
     {
       "page": 3,
       "question": "wizard.dynamic.question1",
-      "name": "gender",
+      "name": "smoker",
       "type": "radio",
       "options": [
-        "common.male",
-        "common.female",
-        "common.other"
+        "common.yes",
+        "common.no"
       ]
     },
     {
       "page": 4,
       "question": "wizard.dynamic.question2",
-      "name": "smoker",
+      "name": "hypertension",
       "type": "radio",
       "options": [
         "common.yes",
@@ -24,7 +23,7 @@
     {
       "page": 5,
       "question": "wizard.dynamic.question3",
-      "name": "hypertension",
+      "name": "diabetes",
       "type": "radio",
       "options": [
         "common.yes",
@@ -34,7 +33,7 @@
     {
       "page": 6,
       "question": "wizard.dynamic.question4",
-      "name": "diabetes",
+      "name": "coronaryHeartDesease",
       "type": "radio",
       "options": [
         "common.yes",
@@ -44,7 +43,7 @@
     {
       "page": 7,
       "question": "wizard.dynamic.question5",
-      "name": "coronaryHeartDesease",
+      "name": "fatigue",
       "type": "radio",
       "options": [
         "common.yes",
@@ -54,7 +53,7 @@
     {
       "page": 8,
       "question": "wizard.dynamic.question6",
-      "name": "fatigue",
+      "name": "breathingProblems",
       "type": "radio",
       "options": [
         "common.yes",
@@ -64,17 +63,18 @@
     {
       "page": 9,
       "question": "wizard.dynamic.question7",
-      "name": "breathingProblems",
+      "name": "cough",
       "type": "radio",
       "options": [
-        "common.yes",
+        "common.yes.cough1",
+        "common.yes.cough2",
         "common.no"
       ]
     },
     {
       "page": 10,
       "question": "wizard.dynamic.question8",
-      "name": "cough",
+      "name": "fever",
       "type": "radio",
       "options": [
         "common.yes",
@@ -84,7 +84,7 @@
     {
       "page": 11,
       "question": "wizard.dynamic.question9",
-      "name": "sputum",
+      "name": "headache",
       "type": "radio",
       "options": [
         "common.yes",
@@ -94,30 +94,6 @@
     {
       "page": 12,
       "question": "wizard.dynamic.question10",
-      "name": "respiratoryRate",
-      "placeholder": "How many breaths you take per minute",
-      "type": "number"
-    },
-    {
-      "page": 13,
-      "question": "wizard.dynamic.question11",
-      "name": "fever",
-      "placeholder": "e.g. 37°C/98.6°F",
-      "type": "number"
-    },
-    {
-      "page": 14,
-      "question": "wizard.dynamic.question12",
-      "name": "myalgia",
-      "type": "radio",
-      "options": [
-        "common.yes",
-        "common.no"
-      ]
-    },
-    {
-      "page": 15,
-      "question": "wizard.dynamic.question13",
       "name": "nausea",
       "type": "radio",
       "options": [
@@ -126,19 +102,9 @@
       ]
     },
     {
-      "page": 16,
-      "question": "wizard.dynamic.question14",
-      "name": "diarrhoea",
-      "type": "radio",
-      "options": [
-        "common.yes",
-        "common.no"
-      ]
-    },
-    {
-      "page": 17,
-      "question": "wizard.dynamic.question14",
-      "name": "exposed",
+      "page": 13,
+      "question": "wizard.dynamic.question11",
+      "name": "diarrhea",
       "type": "radio",
       "options": [
         "common.yes",

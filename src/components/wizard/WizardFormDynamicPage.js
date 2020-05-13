@@ -25,7 +25,7 @@ const RadioOptions = styled.div`
   margin: 40px auto;
   margin-bottom: 20px;
   display: flex;
-  width: 230px;
+  width: 250px;
   justify-content: space-between;
   flex-flow: wrap;
 
