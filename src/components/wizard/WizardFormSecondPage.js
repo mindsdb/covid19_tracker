@@ -74,7 +74,7 @@ const WizardFormSecondPage = props => {
               } else if (x.types.includes("administrative_area_level_1")) {
                 data.state = x.long_name.normalize ("NFKD").replace (/[\u0300-\u036F]/g, "")
               } else if (x.types.includes("sublocality")) {
-                data.neighborhood = x.long_name..normalize ("NFKD").replace (/[\u0300-\u036F]/g, "")
+                data.neighborhood = x.long_name.normalize ("NFKD").replace (/[\u0300-\u036F]/g, "")
               } else if (x.types.includes("postal_code")) {
                 data.postal_code = x.long_name
               }
