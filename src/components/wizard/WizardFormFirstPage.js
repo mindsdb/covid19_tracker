@@ -64,7 +64,7 @@ const RequieredSpan = styled.p`
 `
 
 const renderError = ({ meta: { touched, error } }) =>
-  touched && error ? <RequieredSpan>{error}</RequieredSpan> : false
+  touched && error ? <RequieredSpan><FormattedMessage id={error} /></RequieredSpan> : false
 
 const WizardFormFirstPage = props => {
   const { handleSubmit } = props

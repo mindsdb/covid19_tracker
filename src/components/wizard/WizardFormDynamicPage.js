@@ -2,7 +2,7 @@ import React from 'react'
 import { Field, reduxForm } from 'redux-form'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
-import { FormattedMessage } from 'react-intl'
+import { useIntl, FormattedMessage } from 'react-intl'
 
 import validate from './validate'
 import renderField from './renderField'
@@ -27,9 +27,11 @@ const RadioOptions = styled.div`
   display: flex;
   width: 230px;
   justify-content: space-between;
+  flex-flow: wrap;
 
   label {
     text-transform: capitalize;
+    margin-top: 10px;
   }
 `
 const Label = styled.label`
@@ -82,7 +84,7 @@ const TitleQuestion = styled.span`
 
 
 const renderError = ({ meta: { touched, error } }) =>
-  touched && error ? <RequieredSpan>{error}</RequieredSpan> : false
+  touched && error ? <RequieredSpan><FormattedMessage id={error} /></RequieredSpan> : false
 
 const WizardFormDynamicPage = props => {
   const {
@@ -92,14 +94,14 @@ const WizardFormDynamicPage = props => {
     pristine,
     submitting,
   } = props
-
-
+  
+  const intl = useIntl()
 
   const validateField = () => {
     if (stepProps.type === 'radio') {
       return (
         <QuestionContainer>
-          <TitleQuestion><FormattedMessage id={stepProps.question} />HOLA</TitleQuestion>
+          <TitleQuestion><FormattedMessage id={stepProps.question} /></TitleQuestion>
           <RadioContainer>
             <RadioOptions>
               {
@@ -110,9 +112,9 @@ const WizardFormDynamicPage = props => {
                       name={stepProps.name}
                       component="input"
                       type="radio"
-                      value={item}
+                      value={intl.formatMessage({ id: item })}
                     />
-                    {item}
+                    {intl.formatMessage({ id: item })}
                   </Label>
                 ))
               }

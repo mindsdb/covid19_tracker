@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 import firebase from "gatsby-plugin-firebase"
 import { reset } from "redux-form"
-import { FormattedMessage } from "react-intl"
+import { useIntl, FormattedMessage } from "react-intl"
 import Cookies from "js-cookie"
 
 import Pie from '@/components/ui/Pie'
@@ -17,32 +17,6 @@ import Title from "@/components/ui/Title"
 import SEO from "../components/seo"
 import flattenObject from "../lib/utils"
 
-const data = (covidData) => [
-  {
-    "id": "Critical",
-    "label": "Critical",
-    "value": covidData?.critical,
-    "color": "hsl(1, 70%, 50%)"
-  },
-  {
-    "id": "Active",
-    "label": "Active",
-    "value": covidData?.active,
-    "color": "hsl(213, 70%, 50%)"
-  },
-  {
-    "id": "Recovered",
-    "label": "Recovered",
-    "value": covidData?.recovered,
-    "color": "hsl(250, 70%, 50%)"
-  },
-  {
-    "id": "Deaths",
-    "label": "Deaths",
-    "value": covidData?.deaths,
-    "color": "hsl(228, 70%, 50%)"
-  },
-]
 
 const BackgroundContent = ({ className, children }) => {
   return (
@@ -103,6 +77,7 @@ const WizardContainer = styled.div`
 
   ${mq.md(css`
     overflow: none;
+    overflow-x: hidden;
   `)}
 `
 const HighlightTitle = styled.span`
@@ -194,6 +169,34 @@ const TestPage = () => {
     setlikCopied(true)
   }
 
+  const intl = useIntl()
+  const data = [
+    {
+      "id": "Critical",
+      "label": intl.formatMessage({ id: "nivo.graph.label1" }),
+      "value": covidData?.critical,
+      "color": "hsl(1, 70%, 50%)"
+    },
+    {
+      "id": "Active",
+      "label": intl.formatMessage({ id: "nivo.graph.label2" }),
+      "value": covidData?.active,
+      "color": "hsl(213, 70%, 50%)"
+    },
+    {
+      "id": "Recovered",
+      "label": intl.formatMessage({ id: "nivo.graph.label3" }),
+      "value": covidData?.recovered,
+      "color": "hsl(250, 70%, 50%)"
+    },
+    {
+      "id": "Deaths",
+      "label": intl.formatMessage({ id: "nivo.graph.label4" }),
+      "value": covidData?.deaths,
+      "color": "hsl(228, 70%, 50%)"
+    }
+  ]
+
   return (
     <>
       <SEO title="Censu" />
@@ -227,7 +230,7 @@ const TestPage = () => {
                             <FormattedMessage id="wizard.confirmed.title" />: <span>{covidData?.cases}</span>
                           </Title>
                           <br />
-                          <Pie height={390} data={data(covidData)}/>
+                          <Pie height={390} data={data}/>
                         </div>
                       </div>
                       <div className="col-xs-12 col-md-7">
@@ -235,7 +238,7 @@ const TestPage = () => {
                           <Description>
                             <FormattedMessage id="wizard.finish.description" />
                             <Href href="https://covid-json-data.s3.amazonaws.com/data.json">
-                              Download Dataset
+                              <FormattedMessage id="download.dataset" />
                           </Href>
                           </Description>
                           <Title

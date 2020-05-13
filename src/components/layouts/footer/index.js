@@ -116,7 +116,7 @@ const Footer = (props) => {
                 <FooterList>
                   <li>
                     <Href href="https://covid-json-data.s3.amazonaws.com/data.json">
-                      Download
+                      <FormattedMessage id="common.download" />
                     </Href>
                   </li>
                 </FooterList>
@@ -127,7 +127,7 @@ const Footer = (props) => {
               <Img fixed={images.mindsdbImage.childImageSharp.fixed} className="last-logo" />
             </div>
             <div className="col-xs-6 col-md-10">
-              <span>® 2020 MindsDB. All rights reserved.</span>
+              <span>® 2020 MindsDB. <FormattedMessage id="footer.copyright" /></span>
             </div>
             <div className="col-xs-3 col-md-2">
               <SocialMedia />

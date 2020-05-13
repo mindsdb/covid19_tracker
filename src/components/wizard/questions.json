@@ -6,8 +6,9 @@
       "name": "gender",
       "type": "radio",
       "options": [
-        "male",
-        "female"
+        "common.male",
+        "common.female",
+        "common.other"
       ]
     },
     {
@@ -16,8 +17,8 @@
       "name": "smoker",
       "type": "radio",
       "options": [
-        "yes",
-        "no"
+        "common.yes",
+        "common.no"
       ]
     },
     {
@@ -26,8 +27,8 @@
       "name": "hypertension",
       "type": "radio",
       "options": [
-        "yes",
-        "no"
+        "common.yes",
+        "common.no"
       ]
     },
     {
@@ -36,8 +37,8 @@
       "name": "diabetes",
       "type": "radio",
       "options": [
-        "yes",
-        "no"
+        "common.yes",
+        "common.no"
       ]
     },
     {
@@ -46,8 +47,8 @@
       "name": "coronaryHeartDesease",
       "type": "radio",
       "options": [
-        "yes",
-        "no"
+        "common.yes",
+        "common.no"
       ]
     },
     {
@@ -56,8 +57,8 @@
       "name": "fatigue",
       "type": "radio",
       "options": [
-        "yes",
-        "no"
+        "common.yes",
+        "common.no"
       ]
     },
     {
@@ -66,8 +67,8 @@
       "name": "breathingProblems",
       "type": "radio",
       "options": [
-        "yes",
-        "no"
+        "common.yes",
+        "common.no"
       ]
     },
     {
@@ -76,8 +77,8 @@
       "name": "cough",
       "type": "radio",
       "options": [
-        "yes",
-        "no"
+        "common.yes",
+        "common.no"
       ]
     },
     {
@@ -86,8 +87,8 @@
       "name": "sputum",
       "type": "radio",
       "options": [
-        "yes",
-        "no"
+        "common.yes",
+        "common.no"
       ]
     },
     {
@@ -110,8 +111,8 @@
       "name": "myalgia",
       "type": "radio",
       "options": [
-        "yes",
-        "no"
+        "common.yes",
+        "common.no"
       ]
     },
     {
@@ -120,8 +121,8 @@
       "name": "nausea",
       "type": "radio",
       "options": [
-        "yes",
-        "no"
+        "common.yes",
+        "common.no"
       ]
     },
     {
@@ -130,8 +131,8 @@
       "name": "diarrhoea",
       "type": "radio",
       "options": [
-        "yes",
-        "no"
+        "common.yes",
+        "common.no"
       ]
     },
     {
@@ -140,8 +141,8 @@
       "name": "exposed",
       "type": "radio",
       "options": [
-        "yes",
-        "no"
+        "common.yes",
+        "common.no"
       ],
       "isLastStep": true
     }

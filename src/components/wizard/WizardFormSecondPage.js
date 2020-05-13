@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { reduxForm } from "redux-form"
 import styled from "@emotion/styled"
 import { css } from "@emotion/core"
-import { FormattedMessage } from "react-intl"
+import { useIntl, FormattedMessage } from "react-intl"
 import GooglePlacesAutocomplete, {
   geocodeByPlaceId,
 } from "react-google-places-autocomplete"
@@ -45,6 +45,7 @@ const ButtonContainer = styled.div`
 
 const WizardFormSecondPage = props => {
   const { handleSubmit, previousPage, feeling, updateMapsData } = props
+  const intl = useIntl()
 
   const [lat, setLat] = useState()
   const [lng, setLng] = useState()
@@ -100,6 +101,7 @@ const WizardFormSecondPage = props => {
       <>
         <GooglePlacesAutocomplete
           apiKey={process.env.GATSBY_GOOGLE_MAPS_API_KEY}
+          placeholder={intl.formatMessage({ id: "googlemaps.placeholder" })}
           onSelect={getAddressInfo}
         />
 

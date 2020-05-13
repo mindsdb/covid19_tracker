@@ -9,8 +9,14 @@
   "banner.rigthSection.description2": "Remember: National and local authorities will have the most up to date information on the spread of COVID-19 in your area. They are best placed to advise on what people in your area should be doing to protect themselves. ",
   "banner.rigthSection.button": "START CENSUS",
 
+  "common.male": "Male",
+  "common.female": "Female",
+  "common.other" : "I prefer not to say",
+  "common.required": "Required",
   "common.yes" : "Yes",
   "common.no" : "No",
+  "common.download": "Download",
+  "googlemaps.placeholder" : "Neighborhood or address",
 
   "howprotect.title": "BE PART OF THE",
   "howprotect.title.cure": "CURE",
@@ -58,6 +64,7 @@
   "footer.minds.link2": "Cookies Policy",
   "footer.minds.link3": "Terms",
   "footer.minds.description.email": "support@mindsdb.com",
+  "footer.copyright" : "All rights reserved.",
 
   "wizard.next.button": "NEXT QUESTION",
   "wizard.previous.button": "PREVIOUS QUESTION",
@@ -68,5 +75,12 @@
   "wizard.finish.description.strong.part1": "THANK YOU FOR HELPING",
   "wizard.finish.description.strong.part2": "SAVE",
   "wizard.finish.description.strong.part3": "LIVES",
-  "wizard.finish.button": "SHARE LINK"
+  "wizard.finish.button": "SHARE LINK",
+
+  "nivo.graph.label1" : "Critical",
+  "nivo.graph.label2" : "Active",
+  "nivo.graph.label3" : "Recovered",
+  "nivo.graph.label4" : "Deaths",
+
+  "download.dataset" : "Download Dataset"
 }

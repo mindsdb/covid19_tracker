@@ -1,52 +1,52 @@
 const validate = values => {
   const errors = {}
   if (!values.feeling) {
-    errors.feeling = "Required"
+    errors.feeling = "common.required"
   }
   if (!values.gender) {
-    errors.gender = "Required"
+    errors.gender = "common.required"
   }
   if (!values.smoker) {
-    errors.smoker = "Required"
+    errors.smoker = "common.required"
   }
   if (!values.hypertension) {
-    errors.hypertension = "Required"
+    errors.hypertension = "common.required"
   }
   if (!values.diabetes) {
-    errors.diabetes = "Required"
+    errors.diabetes = "common.required"
   }
   if (!values.coronaryHeartDesease) {
-    errors.coronaryHeartDesease = "Required"
+    errors.coronaryHeartDesease = "common.required"
   }
   if (!values.fatigue) {
-    errors.fatigue = "Required"
+    errors.fatigue = "common.required"
   }
   if (!values.breathingProblems) {
-    errors.breathingProblems = "Required"
+    errors.breathingProblems = "common.required"
   }
   if (!values.cough) {
-    errors.cough = "Required"
+    errors.cough = "common.required"
   }
   if (!values.sputum) {
-    errors.sputum = "Required"
+    errors.sputum = "common.required"
   }
   if (!values.respiratoryRate) {
-    errors.respiratoryRate = "Required"
+    errors.respiratoryRate = "common.required"
   }
   if (!values.fever) {
-    errors.fever = "Required"
+    errors.fever = "common.required"
   }
   if (!values.myalgia) {
-    errors.myalgia = "Required"
+    errors.myalgia = "common.required"
   }
   if (!values.nausea) {
-    errors.nausea = "Required"
+    errors.nausea = "common.required"
   }
   if (!values.diarrhoea) {
-    errors.diarrhoea = "Required"
+    errors.diarrhoea = "common.required"
   }
   if (!values.exposed) {
-    errors.exposed = "Required"
+    errors.exposed = "common.required"
   }
 
   return errors
