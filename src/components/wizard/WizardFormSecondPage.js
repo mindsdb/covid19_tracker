@@ -58,9 +58,6 @@ const WizardFormSecondPage = props => {
   }
 
   const getAddressInfo = data => {
-    setLat()
-    setLng()
-
     setTimeout(() => {
       if (data.place_id) {
         geocodeByPlaceId(data.place_id)
@@ -74,7 +71,7 @@ const WizardFormSecondPage = props => {
                 data.country = x.long_name.normalize ("NFKD").replace (/[\u0300-\u036F]/g, "")
               } else if (x.types.includes("administrative_area_level_1")) {
                 data.state = x.long_name.normalize ("NFKD").replace (/[\u0300-\u036F]/g, "")
-              } else if (x.types.includes("sublocality")) {
+              } else if (x.types.indexOf("sublocality") > -1 || x.types.indexOf("neighborhood") > -1) {
                 data.neighborhood = x.long_name.normalize ("NFKD").replace (/[\u0300-\u036F]/g, "")
               } else if (x.types.includes("postal_code")) {
                 data.postal_code = x.long_name

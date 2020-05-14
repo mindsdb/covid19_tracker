@@ -122,17 +122,47 @@ const paddingMessage = css`
 `
 
 const TestPage = () => {
+  const intl = useIntl()
   const [showForm, setShowForm] = useState(true)
   const [likCopied, setlikCopied] = useState(false)
   const [mapsData, setMapsData] = useState()
   const [covidData, setCovidData] = useState([])
   const [country, setCountry] = useState()
+  const [dataPie, setDataPie] = useState([])
 
   useEffect(() => {
     fetch(`https://coronavirus-19-api.herokuapp.com/countries/${country}`)
       .then(res => res.json())
-      .then(cases => setCovidData(cases))
-  }, [country])
+      .then(cases => {
+        setCovidData(cases)
+        setDataPie([
+          {
+            "id": "Critical",
+            "label": intl.formatMessage({ id: "nivo.graph.label1" }),
+            "value": cases.critical,
+            "color": "hsl(1, 70%, 50%)"
+          },
+          {
+            "id": "Active",
+            "label": intl.formatMessage({ id: "nivo.graph.label2" }),
+            "value": cases.active,
+            "color": "hsl(213, 70%, 50%)"
+          },
+          {
+            "id": "Recovered",
+            "label": intl.formatMessage({ id: "nivo.graph.label3" }),
+            "value": cases.recovered,
+            "color": "hsl(250, 70%, 50%)"
+          },
+          {
+            "id": "Deaths",
+            "label": intl.formatMessage({ id: "nivo.graph.label4" }),
+            "value": cases.deaths,
+            "color": "hsl(228, 70%, 50%)"
+          }
+        ])
+      })
+  }, [country, intl])
 
   const updateMapsData = data => {
     setMapsData(data)
@@ -169,34 +199,6 @@ const TestPage = () => {
     setlikCopied(true)
   }
 
-  const intl = useIntl()
-  const data = [
-    {
-      "id": "Critical",
-      "label": intl.formatMessage({ id: "nivo.graph.label1" }),
-      "value": covidData?.critical,
-      "color": "hsl(1, 70%, 50%)"
-    },
-    {
-      "id": "Active",
-      "label": intl.formatMessage({ id: "nivo.graph.label2" }),
-      "value": covidData?.active,
-      "color": "hsl(213, 70%, 50%)"
-    },
-    {
-      "id": "Recovered",
-      "label": intl.formatMessage({ id: "nivo.graph.label3" }),
-      "value": covidData?.recovered,
-      "color": "hsl(250, 70%, 50%)"
-    },
-    {
-      "id": "Deaths",
-      "label": intl.formatMessage({ id: "nivo.graph.label4" }),
-      "value": covidData?.deaths,
-      "color": "hsl(228, 70%, 50%)"
-    }
-  ]
-
   return (
     <>
       <SEO title="Censu" />
@@ -230,7 +232,7 @@ const TestPage = () => {
                             <FormattedMessage id="wizard.confirmed.title" />: <span>{covidData?.cases}</span>
                           </Title>
                           <br />
-                          <Pie height={390} data={data}/>
+                          <Pie height={390} data={dataPie}/>
                         </div>
                       </div>
                       <div className="col-xs-12 col-md-7">

@@ -22,5 +22,3 @@ export const wrapPageElement = ({ element, props }) => {
   // including location, data, etc - you don't need to pass it
   return <Layout {...props} locale={locale}>{element}</Layout>
 }
-
-export default {}
