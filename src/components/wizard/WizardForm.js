@@ -5,6 +5,7 @@ import WizardFormFirstPage from "./WizardFormFirstPage"
 import WizardFormSecondPage from "./WizardFormSecondPage"
 import WizardFormDynamicPage from "./WizardFormDynamicPage"
 import { questions } from "./questions.json"
+import { questions_second } from "./questions_second.json"
 
 const WizardForm = props => {
   const { onSubmit, updateMapsData } = props
@@ -25,7 +26,8 @@ const WizardForm = props => {
   }
 
   const getDynamicStep = () => {
-    const stepProps = questions.find(item => page === item.page)
+    const stepProps = feeling ? questions_second.find(item => page === item.page) 
+      : questions.find(item => page === item.page)
 
     if (stepProps && stepProps.page) {
       return (
@@ -48,7 +50,7 @@ const WizardForm = props => {
           feeling={feeling}
           updateMapsData={updateMapsData}
           previousPage={previousPage}
-          onSubmit={feeling ? onSubmit : nextPage}
+          onSubmit={nextPage}
         />
       )}
       {getDynamicStep()}

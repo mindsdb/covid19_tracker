@@ -44,7 +44,7 @@ const ButtonContainer = styled.div`
 `
 
 const WizardFormSecondPage = props => {
-  const { handleSubmit, previousPage, feeling, updateMapsData } = props
+  const { handleSubmit, previousPage, updateMapsData } = props
   const intl = useIntl()
 
   const [lat, setLat] = useState()
@@ -124,11 +124,7 @@ const WizardFormSecondPage = props => {
           backgroundColorHover={Colors.white}
           disabled={validateField()}
         >
-          {feeling ? (
-            <FormattedMessage id="wizard.submit.button" />
-          ) : (
-            <FormattedMessage id="wizard.next.button" />
-          )}
+          <FormattedMessage id="wizard.next.button" />
         </Button>
       </ButtonContainer>
     </Form>

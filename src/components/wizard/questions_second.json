@@ -1,0 +1,127 @@
+{
+  "questions_second": [
+    {
+      "page": 3,
+      "question": "wizard.dynamic.question12",
+      "name": "gender",
+      "type": "radio",
+      "options": [
+        "common.male",
+        "common.female",
+        "common.other"
+      ]
+    },
+    {
+      "page": 4,
+      "question": "wizard.dynamic.question13",
+      "name": "age",
+      "type": "radio",
+      "options": [
+        "common.age.1",
+        "common.age.2",
+        "common.age.3"
+      ]
+    },
+    {
+      "page": 5,
+      "question": "wizard.dynamic.question14",
+      "name": "self_isolating",
+      "type": "radio",
+      "options": [
+        "common.yes",
+        "common.no"
+      ]
+    },
+    {
+      "page": 6,
+      "question": "wizard.dynamic.question15",
+      "name": "social_distancing",
+      "type": "radio",
+      "options": [
+        "common.yes",
+        "common.no"
+      ]
+    },
+    {
+      "page": 7,
+      "question": "wizard.dynamic.question16",
+      "name": "facemask",
+      "type": "radio",
+      "options": [
+        "common.yes",
+        "common.no"
+      ]
+    },
+    {
+      "page": 8,
+      "question": "wizard.dynamic.question17",
+      "name": "wash_your_hands",
+      "type": "radio",
+      "options": [
+        "common.yes",
+        "common.no"
+      ]
+    },
+    {
+      "page": 9,
+      "question": "wizard.dynamic.question18",
+      "name": "contact_with_covid19",
+      "type": "radio",
+      "options": [
+        "common.yes",
+        "common.no"
+      ]
+    },
+    {
+      "page": 10,
+      "question": "wizard.dynamic.question19",
+      "name": "know_someone_with_covid19",
+      "type": "radio",
+      "options": [
+        "common.yes",
+        "common.no"
+      ]
+    },
+    {
+      "page": 11,
+      "question": "wizard.dynamic.question20",
+      "name": "know_someone_with_covid19",
+      "type": "radio",
+      "options": [
+        "common.yes",
+        "common.no"
+      ]
+    },
+    {
+      "page": 12,
+      "question": "wizard.dynamic.question21",
+      "name": "eat_healthy_diet",
+      "type": "radio",
+      "options": [
+        "common.yes",
+        "common.no"
+      ]
+    },
+    {
+      "page": 13,
+      "question": "wizard.dynamic.question22",
+      "name": "clean_surfaces_regularly",
+      "type": "radio",
+      "options": [
+        "common.yes",
+        "common.no"
+      ]
+    },
+    {
+      "page": 14,
+      "question": "wizard.dynamic.question23",
+      "name": "order_food_with_delivery",
+      "type": "radio",
+      "options": [
+        "common.yes",
+        "common.no"
+      ],
+      "isLastStep": true
+    }
+  ]
+}
