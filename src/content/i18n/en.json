@@ -92,6 +92,7 @@
   "wizard.finish.description.strong.part2": "SAVE",
   "wizard.finish.description.strong.part3": "LIVES",
   "wizard.finish.button": "SHARE LINK",
+  "wizard.finish.copied" : "Copied!",
 
   "nivo.graph.label1" : "Critical",
   "nivo.graph.label2" : "Active",

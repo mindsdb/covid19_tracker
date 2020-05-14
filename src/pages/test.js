@@ -269,7 +269,7 @@ const TestPage = () => {
                               <FormattedMessage id="wizard.finish.button" />
                             </Button>
                           &nbsp;
-                          {likCopied && <strong>Copied!</strong>}
+                          {likCopied && <FormattedMessage id="wizard.finish.copied" />}
                           </ButtonContainer>
                         </div>
                       </div>

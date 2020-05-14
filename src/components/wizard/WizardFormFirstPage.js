@@ -29,7 +29,6 @@ const RadioOptions = styled.div`
   justify-content: space-between;
 
   label {
-    text-transform: capitalize;
   }
 `
 const Label = styled.label`

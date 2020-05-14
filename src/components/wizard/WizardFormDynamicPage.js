@@ -30,7 +30,6 @@ const RadioOptions = styled.div`
   flex-flow: wrap;
 
   label {
-    text-transform: capitalize;
     margin-top: 10px;
   }
 `
