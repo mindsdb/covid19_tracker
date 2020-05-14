@@ -85,7 +85,7 @@
     {
       "page": 11,
       "question": "wizard.dynamic.question20",
-      "name": "know_someone_with_covid19",
+      "name": "crowded_risk_places",
       "type": "radio",
       "options": [
         "common.yes",
