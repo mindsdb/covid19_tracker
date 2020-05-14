@@ -9,9 +9,12 @@
   "banner.rigthSection.description2": "Remember: National and local authorities will have the most up to date information on the spread of COVID-19 in your area. They are best placed to advise on what people in your area should be doing to protect themselves. ",
   "banner.rigthSection.button": "START CENSUS",
 
-  "common.male": "Male",
-  "common.female": "Female",
+  "common.male": "Man",
+  "common.female": "Woman",
   "common.other" : "I prefer not to say",
+  "common.age.1" : "Less than 17",
+  "common.age.2" : "18 - 64",
+  "common.age.3" : "Over 65",
   "common.required": "Required",
   "common.yes" : "Yes",
   "common.no" : "No",
@@ -47,7 +50,6 @@
   "wizard.static.question2": "What is your address?",
   "wizard.static.question2.note": "This information is anonymous and is used only for statistical purposes.",
 
-
   "wizard.dynamic.question1": "Do you smoke?",
   "wizard.dynamic.question2": "Do you have hypertension? (High blood pressure)",
   "wizard.dynamic.question3": "Do you have diabetes? (Type 1 or 2)",
@@ -61,6 +63,17 @@
   "wizard.dynamic.question11": "Do you have diarrhea?",
   
   "wizard.dynamic.question12": "What is your gender?",
+  "wizard.dynamic.question13": "How old are you?",
+  "wizard.dynamic.question14": "Are you self-isolating in your home?",
+  "wizard.dynamic.question15": "Are you social distancing when you go out?",
+  "wizard.dynamic.question16": "Do you wear a facemask when you leave your home?",
+  "wizard.dynamic.question17": "Do you wash your hands frequently and/or use antibacterial handgel?",
+  "wizard.dynamic.question18": "Have you been in contact with anyone that has been diagnosed with COVID-19?",
+  "wizard.dynamic.question19": "Do you know someone personally who has been diagnosed with COVID-19?",
+  "wizard.dynamic.question20": "Have you been to any crowded or high risk places? (Airports, markets, public transport, etc.)",
+  "wizard.dynamic.question21": "Do you eat a healthy diet?",
+  "wizard.dynamic.question22": "Do you clean the surfaces in your house regularly?",
+  "wizard.dynamic.question23": "Do you often order food or other items to be delivered to your home?",
 
   "footer.minds.title": "Policies",
   "footer.minds.link1": "Privacy Policy",
