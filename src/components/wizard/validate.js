@@ -49,6 +49,44 @@ const validate = values => {
     errors.exposed = "common.required"
   }
 
+  if (!values.age) {
+    errors.age = "common.required"
+  }
+  if (!values.self_isolating) {
+    errors.self_isolating = "common.required"
+  }
+  if (!values.social_distancing) {
+    errors.social_distancing = "common.required"
+  }
+  if (!values.facemask) {
+    errors.facemask = "common.required"
+  }
+  if (!values.wash_your_hands) {
+    errors.wash_your_hands = "common.required"
+  }
+  if (!values.contact_with_covid19) {
+    errors.contact_with_covid19 = "common.required"
+  }
+  if (!values.know_someone_with_covid19) {
+    errors.know_someone_with_covid19 = "common.required"
+  }
+  if (!values.crowded_risk_places) {
+    errors.crowded_risk_places = "common.required"
+  }
+  if (!values.eat_healthy_diet) {
+    errors.eat_healthy_diet = "common.required"
+  }
+  if (!values.clean_surfaces_regularly) {
+    errors.clean_surfaces_regularly = "common.required"
+  }
+  if (!values.order_food_with_delivery) {
+    errors.order_food_with_delivery = "common.required"
+  }
+  if (!values.order_food_with_delivery) {
+    errors.order_food_with_delivery = "common.required"
+  }
+
+
   return errors
 }
 
