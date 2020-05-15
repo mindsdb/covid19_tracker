@@ -2,11 +2,6 @@ import React from "react"
 import { Map, GoogleApiWrapper, Marker } from "google-maps-react"
 import styled from "@emotion/styled"
 
-const mapStyles = {
-  width: "100%",
-  maxWidth: "600px",
-  height: "250px",
-}
 const OverMap = styled.div`
   div:first-of-type {
     position: relative !important;
@@ -16,6 +11,40 @@ const OverMap = styled.div`
 
 const MapContainer = props => {
   const { lat, lng } = props
+  const mapStyles = [
+    {
+      "stylers": [
+        {
+          "hue": "#007fff"
+        },
+        {
+          "saturation": 89
+        }
+      ]
+    },
+    {
+      "featureType": "water",
+      "stylers": [
+        {
+          "color": "#ffffff"
+        }
+      ]
+    },
+    {
+      "featureType": "administrative.country",
+      "elementType": "labels",
+      "stylers": [
+        {
+          "visibility": "off"
+        }
+      ]
+    }
+  ]
+  const _mapLoaded = (mapProps, map) => {
+    map.setOptions({
+       styles: mapStyles
+    })
+ }
 
   return (
     <OverMap>
@@ -23,8 +52,8 @@ const MapContainer = props => {
         <Map
           google={props.google}
           zoom={18}
-          style={mapStyles}
           initialCenter={{ lat, lng }}
+          onReady={(mapProps, map) => _mapLoaded(mapProps, map)}
         >
           <Marker position={{ lat, lng }} />
         </Map>
