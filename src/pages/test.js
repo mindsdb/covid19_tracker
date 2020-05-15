@@ -57,7 +57,7 @@ const BackgroundContainer = styled(BackgroundContent)`
   margin-bottom: 10px;
 
   ${mq.md(css`
-    height: 70vh;
+    height: 90vh;
     margin-bottom: 60px;
   `)}
 `
@@ -218,7 +218,7 @@ const TestPage = () => {
                   />
                 </WizardContainer>
               ) : (
-                  <WizardContainer className="container">
+                  <WizardContainer className="container-fluid">
                     <div className="row">
                       <div className="col-xs-12 col-md-5">
                         <div css={paddingPie}>
