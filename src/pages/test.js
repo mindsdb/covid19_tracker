@@ -229,7 +229,7 @@ const TestPage = () => {
                       <div className="col-xs-12 col-md-5">
                         <div css={paddingPie}>
                           <Title marginTop="60px" max="10" min="20" color={Colors.mirage} textAlign="left">
-                            <FormattedMessage id="wizard.confirmed.title" />: <span>{covidData?.cases}</span>
+                            <FormattedMessage id="wizard.confirmed.title" />: <span>{covidData?.cases.toLocaleString()}</span>
                           </Title>
                           <br />
                           <Pie height={390} data={dataPie}/>

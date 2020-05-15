@@ -7,7 +7,7 @@
   "banner.leftSection.desription2": "La información anónima recolectada se hará pública para ayudar a que nuestras comunidades, sistemas de salud, científicos e innovadores tomen decisiones informadas.",
   "banner.rigthSection.description1": "Atención: Si tú crees tener una emergecia grave, contacta a tu médico inmediatamente o llama al teléfono local de emergencias.",
   "banner.rigthSection.description2": "Recuerda: Las autoridades locales y federales cuentan con la información más actualizada de contagios de COVID-19 en tu localidad. Ellos están mejor situados para dar inidicaciones a la gente de tu localidad de lo que deberían hacer para protegerse a sí mismos.",
-  "banner.rigthSection.button": "EMPEZAR CUESTIONARIO",
+  "banner.rigthSection.button": "INICIAR CUESTIONARIO",
 
   "common.male": "Hombre",
   "common.female": "Mujer",
@@ -34,7 +34,7 @@
   "howprotect.avoid.title": "Mantén tu Distancia",
   "howprotect.avoid.description": "Mantén una distancia de al menos un metro entre tu persona y cualquiera que se encuentre tosiendo. ¿Por qué? Cuando alguien tose o estornuda, rocía pequeñas gotas de líquido desde su nariz o boca, mismas que pueden contener virus. Si te encuentras demasiado cerca a ellos, puedes respirar dichas gotas, incluyendo las que contienen el virus de COVID-19 si la persona está infectada.",
   "howprotect.respitory.title": "Practica Higiene Respiratoria",
-  "howprotect.respitory.description": "Asegúrate de que tú y la gente a tu alrededor tenga buena higiene respiratoria. Esto significa cubrir nariz y boca con un pañuelo deshechable o con el codo flexionado al toser o estornudad. Luego desecha el pañuelo usado inmediatamente. ¿Por qué? La pequeñas gotas propagan el virus. Al tener una buena higiene respiratoria te proteges a tí y a la gente que esta a tu alrededor de virus como influenza, gripe y COVID-19.",
+  "howprotect.respitory.description": "Asegúrate de que tú y la gente a tu alrededor tenga buena higiene respiratoria. Esto significa cubrir nariz y boca con un pañuelo deshechable o con el codo flexionado al toser o estornudar. Luego desecha el pañuelo usado inmediatamente. ¿Por qué? La pequeñas gotas propagan el virus. Al tener una buena higiene respiratoria te proteges a tí y a la gente que está a tu alrededor de virus como influenza, gripe y COVID-19.",
   "howprotect.cough.title": "Si tienes fiebre, tos y dificultad al respirar",
   "howprotect.cough.description": "Procura atención médica lo más pronto posible. Quédate en casa si te sientes mal. Si tienes fiebre, tos y dificultad al respirar, busca atención médica con anticipación. Sigue las indicaciones de las autoridades locales de salud. ¿Por qué? Las autoridades federales y locales tendrán la información más actualizada sobre la situación en tu área. Llamar con anticipación permitirá que su profesional de salud le dirija rápidamente al centro de salud adecuado. Esto también ayudará a protegerte y a prevenir la propagación del virus y otras infecciones.",
   "howprotect.right.title.part1": "ESTAR",
@@ -59,8 +59,8 @@
   "wizard.dynamic.question7": "¿Tienes tos?",
   "wizard.dynamic.question8": "¿Tienes fiebre?",
   "wizard.dynamic.question9": "¿Tienes dolor de cabeza? y ¿Estás experimentando algún dolor muscular o en articulaciones?",
-  "wizard.dynamic.question10": "¿Tiene nausea o vómito?",
-  "wizard.dynamic.question11": "¿Tiene diarrea?",
+  "wizard.dynamic.question10": "¿Tienes nausea o vómito?",
+  "wizard.dynamic.question11": "¿Tienes diarrea?",
 
   "wizard.dynamic.question12": "¿Cuál es tu sexo?",
   "wizard.dynamic.question13": "¿Cuantos años tienes?",
