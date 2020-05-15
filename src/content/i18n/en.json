@@ -9,6 +9,7 @@
   "banner.rigthSection.description2": "Remember: National and local authorities will have the most up to date information on the spread of COVID-19 in your area. They are best placed to advise on what people in your area should be doing to protect themselves. ",
   "banner.rigthSection.button": "START CENSUS",
 
+  "common.sending" : "Sending",
   "common.male": "Man",
   "common.female": "Woman",
   "common.other" : "I prefer not to say",
@@ -93,6 +94,12 @@
   "wizard.finish.description.strong.part3": "LIVES",
   "wizard.finish.button": "SHARE LINK",
   "wizard.finish.copied" : "Copied!",
+  "wizard.finish.suscribe" : "Suscribe",
+  "wizard.finish.email.suscribe" : "name@domain.com",
+  "wizard.finish.suscribe.title": "I wish to subscribe and receive news about the data collected.",
+  "wizard.suscribe.success": "Thank you for subscribing!",
+
+  "finish.left.text": "La data que ha sido recolectada por este censo la puedes encontrar en el siguiente enlace.",
 
   "nivo.graph.label1" : "Critical",
   "nivo.graph.label2" : "Active",

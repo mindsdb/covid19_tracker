@@ -42,6 +42,7 @@
     "react-helmet": "^5.2.1",
     "react-icons": "^3.9.0",
     "react-intl": "^4.3.1",
+    "react-mailchimp-subscribe": "^2.1.0",
     "react-redux": "^7.2.0",
     "react-slick": "^0.25.2",
     "react-svg-star-rating": "^1.1.5",

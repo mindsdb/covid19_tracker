@@ -9,6 +9,7 @@
   "banner.rigthSection.description2": "Recuerda: Las autoridades locales y federales cuentan con la información más actualizada de contagios de COVID-19 en tu localidad. Ellos están mejor situados para dar inidicaciones a la gente de tu localidad de lo que deberían hacer para protegerse a sí mismos.",
   "banner.rigthSection.button": "INICIAR CUESTIONARIO",
 
+  "common.sending" : "Enviando",
   "common.male": "Hombre",
   "common.female": "Mujer",
   "common.other" : "Prefiero no decir",
@@ -92,7 +93,12 @@
   "wizard.finish.description.strong.part3": "VIDAS",
   "wizard.finish.button": "COMPARTIR LINK",
   "wizard.finish.copied" : "Copiado",
+  "wizard.finish.suscribe" : "Suscribirme",
+  "wizard.finish.email.suscribe" : "Miemail@dominio.com",
+  "wizard.finish.suscribe.title": "Deseo suscribirme y recibir noticias sobre la data recolectada.",
+  "wizard.suscribe.success": "¡Gracias por suscribirte!",
 
+  "finish.left.text": "La data que ha sido recolectada por este censo la puedes encontrar en el siguiente enlace.",
 
   "nivo.graph.label1" : "Critico",
   "nivo.graph.label2" : "Activos",

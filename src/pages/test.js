@@ -7,6 +7,7 @@ import { reset } from "redux-form"
 import { useIntl, FormattedMessage } from "react-intl"
 import Cookies from "js-cookie"
 
+import SubscribeEmail from '@/components/ui/SubscribeEmail'
 import Pie from '@/components/ui/Pie'
 import Button from "@/components/ui/Button"
 import { Colors } from "@/components/layouts/utils/theme"
@@ -108,6 +109,7 @@ const Href = styled.a`
   color: ${Colors.linkColor};
   display: block;
   margin: 30px;
+  text-decoration: none;
   font-weight: 600;
 `
 const paddingPie = css`
@@ -117,7 +119,7 @@ const paddingPie = css`
 `
 const paddingMessage = css`
  ${mq.md(css`
-    padding: 80px 60px 10px 0px;
+    padding: 0px 60px 10px 0px;
   `)}
 `
 
@@ -228,21 +230,29 @@ const TestPage = () => {
                     <div className="row">
                       <div className="col-xs-12 col-md-5">
                         <div css={paddingPie}>
-                          <Title marginTop="60px" max="10" min="20" color={Colors.mirage} textAlign="left">
+                          <Title max="10" min="20" color={Colors.mirage} textAlign="left">
                             <FormattedMessage id="wizard.confirmed.title" />: <span>{covidData?.cases}</span>
                           </Title>
                           <br />
-                          <Pie height={390} data={dataPie}/>
+                          <Pie height={320} data={dataPie}/>
+                          <Description>
+                            <FormattedMessage id="finish.left.text" />
+                            <Href href="https://covid-json-data.s3.amazonaws.com/data.json">
+                              <FormattedMessage id="download.dataset" />
+                            </Href>
+                          </Description>
                         </div>
                       </div>
                       <div className="col-xs-12 col-md-7">
                         <div css={paddingMessage}>
+                         {/* <Title max="10" min="20" color={Colors.mirage} textAlign="left">
+                            Eres el censado<br/>
+                            #31,3342
+                          </Title> */}
                           <Description>
                             <FormattedMessage id="wizard.finish.description" />
-                            <Href href="https://covid-json-data.s3.amazonaws.com/data.json">
-                              <FormattedMessage id="download.dataset" />
-                          </Href>
                           </Description>
+                          <SubscribeEmail />
                           <Title
                             marginTop="50px"
                             marginBottom="30px"
