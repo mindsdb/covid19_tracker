@@ -4,11 +4,11 @@
     <img alt="Gatsby" src="https://assets.website-files.com/5c7e77a16fbaf30ffda0de72/5cc69a9fd9da3369c3848e5b_logo.png" width="200" />
   </a>
 </p>
-[![Netlify Status](https://api.netlify.com/api/v1/badges/2680275f-cdff-4780-a51a-dbadc292d8a8/deploy-status)](https://app.netlify.com/sites/reverent-lamarr-6c52c6/deploys)
-
 <h1 align="left">
   MindsDB + COVID-19  (PWA)
 </h1>
+
+![Netlify Status](https://api.netlify.com/api/v1/badges/2680275f-cdff-4780-a51a-dbadc292d8a8/deploy-status)
 
 ## 🚀 Quick start
 
