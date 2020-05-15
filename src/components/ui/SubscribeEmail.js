@@ -33,6 +33,7 @@ const CustomForm = ({ status, message, onValidated }) => {
   return (
     <>
       <br/>
+      <br/>
       <strong>
         <FormattedMessage id="wizard.finish.suscribe.title" />
       </strong>

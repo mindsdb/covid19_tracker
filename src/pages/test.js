@@ -7,9 +7,9 @@ import { reset } from "redux-form"
 import { useIntl, FormattedMessage } from "react-intl"
 import Cookies from "js-cookie"
 
+import ShareThis from '@/components/ui/ShareThis'
 import SubscribeEmail from '@/components/ui/SubscribeEmail'
 import Pie from '@/components/ui/Pie'
-import Button from "@/components/ui/Button"
 import { Colors } from "@/components/layouts/utils/theme"
 import { mq } from "@/components/layouts/utils/base"
 import { css } from "@emotion/core"
@@ -97,14 +97,6 @@ const HighlightTitle = styled.span`
 const ThanksColor = styled.span`
   color: ${Colors.lightGreen};
 `
-const ButtonContainer = styled.div`
-  margin: 10px auto;
-  text-align: center;
-
-  ${mq.md(css`
-    margin: 70px auto;
-  `)}
-`
 const Href = styled.a`
   color: ${Colors.linkColor};
   display: block;
@@ -126,7 +118,6 @@ const paddingMessage = css`
 const TestPage = () => {
   const intl = useIntl()
   const [showForm, setShowForm] = useState(true)
-  const [likCopied, setlikCopied] = useState(false)
   const [mapsData, setMapsData] = useState()
   const [covidData, setCovidData] = useState([])
   const [country, setCountry] = useState()
@@ -185,7 +176,7 @@ const TestPage = () => {
           ? Cookies.get("mindsDBCovidCount")
           : 0
 
-        const country = values?.country.normalize ("NFKD").replace (/[\u0300-\u036F]/g, "")
+        const country = values?.country.normalize("NFKD").replace(/[\u0300-\u036F]/g, "")
         setCountry(country === "United State" || country === "Estados Unidos" ? "usa" : country)
 
         Cookies.set("mindsDBCovid", "completed")
@@ -194,11 +185,6 @@ const TestPage = () => {
         dispatch(reset("wizard"))
       }
     }
-  }
-
-  const copyTextToClipboard = () => {
-    navigator.clipboard.writeText(window.location.host)
-    setlikCopied(true)
   }
 
   return (
@@ -234,7 +220,7 @@ const TestPage = () => {
                             <FormattedMessage id="wizard.confirmed.title" />: <span>{covidData?.cases}</span>
                           </Title>
                           <br />
-                          <Pie height={320} data={dataPie}/>
+                          <Pie height={320} data={dataPie} />
                           <Description>
                             <FormattedMessage id="finish.left.text" />
                             <Href href="https://covid-json-data.s3.amazonaws.com/data.json">
@@ -245,7 +231,7 @@ const TestPage = () => {
                       </div>
                       <div className="col-xs-12 col-md-7">
                         <div css={paddingMessage}>
-                         {/* <Title max="10" min="20" color={Colors.mirage} textAlign="left">
+                          {/* <Title max="10" min="20" color={Colors.mirage} textAlign="left">
                             Eres el censado<br/>
                             #31,3342
                           </Title> */}
@@ -253,6 +239,7 @@ const TestPage = () => {
                             <FormattedMessage id="wizard.finish.description" />
                           </Description>
                           <SubscribeEmail />
+                          <br />
                           <Title
                             marginTop="50px"
                             marginBottom="30px"
@@ -268,19 +255,7 @@ const TestPage = () => {
                           </ThanksColor>
                             <FormattedMessage id="wizard.finish.description.strong.part3" />
                           </Title>
-                          <ButtonContainer>
-                            <Button
-                              type="button"
-                              stylesType="common"
-                              backgroundColor={Colors.lightGreen}
-                              backgroundColorHover={Colors.white}
-                              callback={copyTextToClipboard}
-                            >
-                              <FormattedMessage id="wizard.finish.button" />
-                            </Button>
-                          &nbsp;
-                          {likCopied && <FormattedMessage id="wizard.finish.copied" />}
-                          </ButtonContainer>
+                          <ShareThis />
                         </div>
                       </div>
                     </div>
