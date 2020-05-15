@@ -6,7 +6,7 @@ const textureLines = [
     id: 'dots',
     type: 'patternDots',
     background: 'inherit',
-    color: 'rgba(255, 255, 255, 0.3)',
+    color: 'rgba(255, 255, 255, 0.1)',
     size: 4,
     padding: 1,
     stagger: true
@@ -15,7 +15,7 @@ const textureLines = [
     id: 'lines',
     type: 'patternLines',
     background: 'inherit',
-    color: 'rgba(255, 255, 255, 0.3)',
+    color: 'rgba(255, 255, 255, 0.1)',
     rotation: -45,
     lineWidth: 6,
     spacing: 10
@@ -30,7 +30,7 @@ const Pie = (props) => (
       innerRadius={0.5}
       padAngle={0.7}
       cornerRadius={3}
-      colors={{ scheme: 'nivo' }}
+      colors={[ '#f25c63', '#4dd9ca', '#00b06d', '#5d697088']}
       borderWidth={1}
       borderColor={{ from: 'color', modifiers: [['darker', 0.2]] }}
       radialLabelsSkipAngle={10}
@@ -54,7 +54,7 @@ const Pie = (props) => (
         },
         {
           match: { id: 'Critical' },
-          id: 'dots'
+          id: 'lines'
         },
         {
           match: { id: 'Active' },
@@ -62,7 +62,7 @@ const Pie = (props) => (
         }, 
         {
           match: { id: 'Deaths' },
-          id: 'dots'
+          id: 'lines'
         },
       ]}
     />

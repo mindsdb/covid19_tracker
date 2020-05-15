@@ -140,7 +140,7 @@ const TestPage = () => {
             "id": "Critical",
             "label": intl.formatMessage({ id: "nivo.graph.label1" }),
             "value": cases.critical,
-            "color": "hsl(1, 70%, 50%)"
+            "color": "hsl(176, 65%, 58%)"
           },
           {
             "id": "Active",
