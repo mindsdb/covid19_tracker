@@ -8,7 +8,7 @@
   MindsDB + COVID-19  (PWA)
 </h1>
 
-![Netlify Status](https://api.netlify.com/api/v1/badges/2680275f-cdff-4780-a51a-dbadc292d8a8/deploy-status)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2680275f-cdff-4780-a51a-dbadc292d8a8/deploy-status)](https://app.netlify.com/sites/reverent-lamarr-6c52c6/deploys)
 
 ## 🚀 Quick start
 
