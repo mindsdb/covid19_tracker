@@ -122,6 +122,7 @@ const TestPage = () => {
   const [covidData, setCovidData] = useState([])
   const [country, setCountry] = useState()
   const [dataPie, setDataPie] = useState([])
+  const [totalCensu, setTotalCensu] = useState(123)
 
   useEffect(() => {
     fetch(`https://coronavirus-19-api.herokuapp.com/countries/${country}`)
@@ -155,7 +156,12 @@ const TestPage = () => {
           }
         ])
       })
-  }, [country, intl])
+
+      fetch('https://us-central1-covid-19-mindsdb.cloudfunctions.net/totalData') 
+        .then(res => res.json())
+        .then(data => setTotalCensu(data.total + 120))
+
+  }, [country, totalCensu, intl])
 
   const updateMapsData = data => {
     setMapsData(data)
@@ -231,30 +237,34 @@ const TestPage = () => {
                       </div>
                       <div className="col-xs-12 col-md-7">
                         <div css={paddingMessage}>
-                          {/* <Title max="10" min="20" color={Colors.mirage} textAlign="left">
-                            Eres el censado<br/>
-                            #31,3342
-                          </Title> */}
+                          <Title max="10" min="20" color={Colors.mirage} textAlign="center">
+                           <FormattedMessage id="wizard.title.right" />
+                          </Title>
+                          <br />
                           <Description>
-                            <FormattedMessage id="wizard.finish.description" />
+                            <FormattedMessage id="wizard.finish.description1" />{' '}
+                            <strong>{totalCensu}</strong>{' '}
+                            <FormattedMessage id="wizard.finish.description2" />
                           </Description>
                           <SubscribeEmail />
-                          <br />
                           <Title
                             marginTop="50px"
                             marginBottom="30px"
                             max="10"
-                            min="28"
+                            min="33"
                             color="black"
                           >
-                            <FormattedMessage id="wizard.finish.description.strong.part1" />
+                            {/* <FormattedMessage id="wizard.finish.description.strong.part1" /> */}
                             <ThanksColor>
                               &nbsp;
-                            <FormattedMessage id="wizard.finish.description.strong.part2" />
-                            &nbsp;
-                          </ThanksColor>
+                              <FormattedMessage id="wizard.finish.description.strong.part2" />
+                              &nbsp;
+                            </ThanksColor>
                             <FormattedMessage id="wizard.finish.description.strong.part3" />
                           </Title>
+                          <Description>
+                            <FormattedMessage id="wizard.paragraph.righ" />
+                          </Description>
                           <ShareThis />
                         </div>
                       </div>
