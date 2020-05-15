@@ -4,6 +4,8 @@
     <img alt="Gatsby" src="https://assets.website-files.com/5c7e77a16fbaf30ffda0de72/5cc69a9fd9da3369c3848e5b_logo.png" width="200" />
   </a>
 </p>
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2680275f-cdff-4780-a51a-dbadc292d8a8/deploy-status)](https://app.netlify.com/sites/reverent-lamarr-6c52c6/deploys)
+
 <h1 align="left">
   MindsDB + COVID-19  (PWA)
 </h1>
@@ -91,3 +93,7 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
 
 12. **`README.md`**: A text file containing useful reference information about your project.
+
+## License
+
+[MIT](LICENSE)
