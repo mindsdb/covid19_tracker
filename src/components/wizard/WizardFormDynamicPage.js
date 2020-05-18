@@ -20,6 +20,10 @@ const Form = styled.form`
 const RadioContainer = styled.div`
   display: flex;
   flex-direction: column;
+
+  ${mq.md(css`
+    height: 400px;
+  `)}
 `
 const RadioOptions = styled.div`
   margin: 40px auto;

@@ -115,7 +115,7 @@ const Footer = (props) => {
                 <strong>Dataset</strong>
                 <FooterList>
                   <li>
-                    <Href href="https://covid-json-data.s3.amazonaws.com/data.json">
+                    <Href href="https://covid-json-data.s3-us-west-2.amazonaws.com/answers_data.json">
                       <FormattedMessage id="common.download" />
                     </Href>
                   </li>

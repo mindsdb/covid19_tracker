@@ -71,8 +71,9 @@ const WizardContainer = styled.div`
   margin: 20px 0;
   padding: 30px;
   border-radius: 5px;
+  min-height: 560px;
   max-height: 560px;
-  overflow: scroll;
+  overflow: auto;
   box-shadow: 4px 4px 11px -7px rgba(0, 0, 0, 0.8);
   border: solid 1px rgba(93, 105, 112, 0.3);
 
@@ -229,7 +230,7 @@ const TestPage = () => {
                           <Pie height={320} data={dataPie} />
                           <Description>
                             <FormattedMessage id="finish.left.text" />
-                            <Href href="https://covid-json-data.s3.amazonaws.com/data.json">
+                            <Href href="https://covid-json-data.s3-us-west-2.amazonaws.com/answers_data.json">
                               <FormattedMessage id="download.dataset" />
                             </Href>
                           </Description>
