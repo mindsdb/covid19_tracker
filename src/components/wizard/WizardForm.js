@@ -8,7 +8,7 @@ import { questions } from "./questions.json"
 import { questions_second } from "./questions_second.json"
 
 const WizardForm = props => {
-  const { onSubmit, updateMapsData } = props
+  const { onSubmit } = props
 
   const [page, setPage] = useState(1)
   const [feeling, setFeeling] = useState(false)
@@ -48,7 +48,7 @@ const WizardForm = props => {
       {page === 2 && (
         <WizardFormSecondPage
           feeling={feeling}
-          updateMapsData={updateMapsData}
+          // updateMapsData={updateMapsData}
           previousPage={previousPage}
           onSubmit={nextPage}
         />

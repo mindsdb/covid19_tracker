@@ -9,6 +9,11 @@
   "banner.rigthSection.description2": "Remember: National and local authorities will have the most up to date information on the spread of COVID-19 in your area. They are best placed to advise on what people in your area should be doing to protect themselves. ",
   "banner.rigthSection.button": "START CENSUS",
 
+  "common.country": "Country",
+  "common.state": "State",
+  "common.city": "City",
+  "common.postalcode": "Zip Code",
+  "common.postalcode.placeholder": "Enter Zip Code",
   "common.sending" : "Sending",
   "common.male": "Man",
   "common.female": "Woman",

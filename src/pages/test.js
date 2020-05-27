@@ -16,7 +16,7 @@ import { css } from "@emotion/core"
 import WizardForm from "@/components/wizard/WizardForm"
 import Title from "@/components/ui/Title"
 import SEO from "../components/seo"
-import flattenObject from "../lib/utils"
+// import flattenObject from "../lib/utils"
 
 
 const BackgroundContent = ({ className, children }) => {
@@ -118,8 +118,9 @@ const paddingMessage = css`
 
 const TestPage = () => {
   const intl = useIntl()
+
+  // const [mapsData, setMapsData] = useState()
   const [showForm, setShowForm] = useState(true)
-  const [mapsData, setMapsData] = useState()
   const [covidData, setCovidData] = useState([])
   const [country, setCountry] = useState()
   const [dataPie, setDataPie] = useState([])
@@ -164,12 +165,13 @@ const TestPage = () => {
 
   }, [country, totalCensu, intl])
 
-  const updateMapsData = data => {
-    setMapsData(data)
-  }
+  // const updateMapsData = data => {
+  //   setMapsData(data)
+  // }
 
   const setAnswerData = async (values, dispatch) => {
-    values = flattenObject({ ...values, mapsData })
+    // values = flattenObject({ ...values, mapsData })
+
     if (values) {
       const answersCollection = firebase.firestore().collection("answers")
       const result = await answersCollection.add({
@@ -214,7 +216,7 @@ const TestPage = () => {
               {showForm ? (
                 <WizardContainer>
                   <WizardForm
-                    updateMapsData={updateMapsData}
+                    // updateMapsData={updateMapsData}
                     onSubmit={setAnswerData}
                   />
                 </WizardContainer>
