@@ -91,8 +91,8 @@ const validate = values => {
   if (!values.city) {
     errors.city = "common.required"
   }
-  if (!values.neighborhood) {
-    errors.neighborhood = "common.required"
+  if (!values.state) {
+    errors.state = "common.required"
   }
   if (!values.postalcode) {
     errors.postalcode = "common.required"

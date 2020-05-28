@@ -3,6 +3,9 @@ import { Field, reduxForm } from 'redux-form'
 import styled from "@emotion/styled"
 import { css } from "@emotion/core"
 import { useIntl, FormattedMessage } from "react-intl"
+import GooglePlacesAutocomplete, {
+  geocodeByPlaceId,
+} from "react-google-places-autocomplete"
 import "react-google-places-autocomplete/dist/index.min.css"
 
 import renderField from './renderField'
@@ -11,6 +14,7 @@ import validate from "./validate"
 import { Colors } from "@/components/layouts/utils/theme"
 import Button from "@/components/ui/Button"
 import { mq } from "@/components/layouts/utils/base"
+import Map from "@/components/ui/Map"
 
 const Form = styled.form`
   input {
@@ -41,8 +45,52 @@ const ButtonContainer = styled.div`
 `
 
 const WizardFormSecondPage = props => {
-  const { handleSubmit, previousPage } = props
+  const { handleSubmit, previousPage, updateMapsData } = props
+
   const intl = useIntl()
+
+  const [lat, setLat] = useState()
+  const [lng, setLng] = useState()
+  const [addressData, setaddressData] = useState()
+
+  const validateField = () => {
+    return addressData
+      ? !Object.keys(addressData).every(x => addressData[x] !== "")
+      : true
+  }
+
+  const getAddressInfo = data => {
+    setTimeout(() => {
+      if (data.place_id) {
+        geocodeByPlaceId(data.place_id)
+          .then(results => {
+            const data = {}
+
+            results[0].address_components.forEach(x => {
+              if (x.types.includes("locality")) {
+                data.city = x.long_name.normalize ("NFKD").replace (/[\u0300-\u036F]/g, "")
+              } else if (x.types.includes("country")) {
+                data.country = x.long_name.normalize ("NFKD").replace (/[\u0300-\u036F]/g, "")
+              } else if (x.types.includes("administrative_area_level_1")) {
+                data.state = x.long_name.normalize ("NFKD").replace (/[\u0300-\u036F]/g, "")
+              } else if (x.types.indexOf("sublocality") > -1 || x.types.indexOf("neighborhood") > -1) {
+                data.neighborhood = x.long_name.normalize ("NFKD").replace (/[\u0300-\u036F]/g, "")
+              } else if (x.types.includes("postal_code")) {
+                data.postal_code = x.long_name
+              }
+            })
+
+            const geo = results[0].geometry.location
+
+            updateMapsData(data)
+            setaddressData(data)
+            setLat(geo.lat())
+            setLng(geo.lng())
+          })
+          .catch(error => console.error(error))
+      }
+    }, 500)
+  }
 
   return (
     <Form onSubmit={handleSubmit}>
@@ -75,6 +123,19 @@ const WizardFormSecondPage = props => {
         component={renderField}
         label={<strong>{intl.formatMessage({ id: "common.postalcode" })}:</strong>}
       />
+
+      <span>
+       <FormattedMessage id="wizard.static.question2.note" />
+      </span>
+      <>
+        <GooglePlacesAutocomplete
+          apiKey={process.env.GATSBY_GOOGLE_MAPS_API_KEY}
+          placeholder={intl.formatMessage({ id: "googlemaps.placeholder" })}
+          onSelect={getAddressInfo}
+        />
+
+        {lat & lng ? <Map lat={lat} lng={lng} /> : null}
+      </>
 
       <ButtonContainer>
         <Button

@@ -19,7 +19,7 @@ const FieldContainer = styled.div`
     margin-bottom: 20px;
   }
   
-  input {
+  input, select {
     border: ${props => props.error ? `1px solid ${Colors.burntSienna}` : 'auto'};
   }
 `
