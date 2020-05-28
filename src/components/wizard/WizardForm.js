@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 
 import WizardFormFirstPage from "./WizardFormFirstPage"
@@ -10,8 +10,24 @@ import { questions_second } from "./questions_second.json"
 const WizardForm = props => {
   const { onSubmit } = props
 
+  const [ authToken, setAuthToken ] = useState('')
   const [page, setPage] = useState(1)
   const [feeling, setFeeling] = useState(false)
+
+  useEffect(() => {
+    fetch(`${process.env.GATSBY_COUNTRY_API}/getaccesstoken`, {
+      headers: {
+        'Accept': 'application/json',
+        'api-token': process.env.GATSBY_COUNTRY_REST_TOKEN,
+        'user-email': process.env.GATSBY_COUNTRY_REST_EMAIL
+      }
+    })
+    .then(res => res.json())
+    .then(auth => {
+      setAuthToken(auth.auth_token)
+    })
+
+  }, [authToken])
 
   const nextPage = values => {
     if (values && values.feeling) {
@@ -47,6 +63,7 @@ const WizardForm = props => {
       {page === 1 && <WizardFormFirstPage onSubmit={nextPage} />}
       {page === 2 && (
         <WizardFormSecondPage
+          authToken={authToken}
           feeling={feeling}
           // updateMapsData={updateMapsData}
           previousPage={previousPage}

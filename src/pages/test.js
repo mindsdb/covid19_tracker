@@ -18,7 +18,6 @@ import Title from "@/components/ui/Title"
 import SEO from "../components/seo"
 // import flattenObject from "../lib/utils"
 
-
 const BackgroundContent = ({ className, children }) => {
   return (
     <StaticQuery

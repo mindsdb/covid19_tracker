@@ -24,17 +24,22 @@ const FieldContainer = styled.div`
   }
 `
 
-const renderField = ({ input, label, placeholder, type, meta: { touched, error } }) => (
+const renderField = ({ input, alias, label, placeholder, data, type, meta: { touched, error } }) => (
   <FieldContainer error={touched && error}>
     <label>{label}</label>
     <div>
       {type === 'select' ?
         <Select {...input} placeholder={placeholder || label}>
           <option selected>Seleccionar</option>
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="mercedes">Mercedes</option>
-          <option value="audi">Audi</option>
+          {data?.map((item, idx) => 
+            <option 
+              key={idx} 
+              id={item.country_phone_code} 
+              value={item[`${alias}_name`]}
+            >
+              {item[`${alias}_name`]}
+            </option>
+          )}
         </Select>
       :
        <input {...input} placeholder={placeholder || label} type={type} />

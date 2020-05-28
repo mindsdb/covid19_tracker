@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Field, reduxForm } from 'redux-form'
 import styled from "@emotion/styled"
 import { css } from "@emotion/core"
@@ -41,30 +41,80 @@ const ButtonContainer = styled.div`
 `
 
 const WizardFormSecondPage = props => {
-  const { handleSubmit, previousPage } = props
+  const { handleSubmit, previousPage, authToken } = props
+  const [ countries, setCountries ] = useState([])
+  const [ states, setStates ] = useState([])
+  const [ cities, setCities ] = useState([])
   const intl = useIntl()
+
+  useEffect(() => {
+    getCountries()
+  }, [])
+
+  const getCountries = () => {
+    fetch(`${process.env.GATSBY_COUNTRY_API}/countries/`, {
+      headers: {
+        'Authorization': `Bearer ${authToken}`,
+        'Accept': 'application/json'
+      }
+    })
+    .then(res => res.json())
+    .then(countries =>  setCountries(countries))
+  }
+
+  const getState = (state) => {
+    fetch(`${process.env.GATSBY_COUNTRY_API}/states/${state}`, {
+      headers: {
+        'Accept': 'application/json',
+        'Authorization': `Bearer ${authToken}`
+      }
+    })
+    .then(res => res.json())
+    .then(states =>  setStates(states))
+  }
+
+  const getCity = (city) => {
+    fetch(`${process.env.GATSBY_COUNTRY_API}/cities/${city}`, {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json',
+        'Authorization': `Bearer ${authToken}`
+      }
+    })
+    .then(res => res.json())
+    .then(cities =>  setCities(cities))
+  }
 
   return (
     <Form onSubmit={handleSubmit}>
+
       <Title marginBottom="30px" max="10" min="25" color={Colors.mirage} >
        <FormattedMessage id="wizard.static.question2" />
       </Title>
 
       <Field 
         name="country"
+        alias="country"
         type="select"
+        data={countries}
         component={renderField}
+        onChange={(e) => getState(e.target.value)}
         label={<strong>{intl.formatMessage({ id: "common.country" })}:</strong>}
       />
       <Field 
         name="state" 
+        alias="state"
         type="select"
+        data={states}
         component={renderField}
+        onChange={(e) => getCity(e.target.value)}
         label={<strong>{intl.formatMessage({ id: "common.state" })}:</strong>}
       />
       <Field 
-        name="city" 
+        name="city"
+        alias="city" 
         type="select"
+        data={cities}
         component={renderField}
         label={<strong>{intl.formatMessage({ id: "common.city" })}:</strong>}
       />
