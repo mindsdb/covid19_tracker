@@ -9,6 +9,11 @@
   "banner.rigthSection.description2": "Recuerda: Las autoridades locales y federales cuentan con la información más actualizada de contagios de COVID-19 en tu localidad. Ellos están mejor situados para dar inidicaciones a la gente de tu localidad de lo que deberían hacer para protegerse a sí mismos.",
   "banner.rigthSection.button": "INICIAR CUESTIONARIO",
 
+  "common.country": "País",
+  "common.state": "Estado",
+  "common.city": "Ciudad",
+  "common.postalcode": "Zip Code",
+  "common.postalcode.placeholder": "Ingresar Zip Code",
   "common.sending" : "Enviando",
   "common.male": "Hombre",
   "common.female": "Mujer",
