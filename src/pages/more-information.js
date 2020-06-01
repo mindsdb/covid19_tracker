@@ -5,15 +5,18 @@ import { MyResponsiveBar } from '@/components/ui/Bar';
 import Pie from '@/components/ui/Pie';
 import GridLoader from 'react-spinners/GridLoader';
 import styled from '@emotion/styled';
-import { css } from "@emotion/core"
-import { Colors } from "@/components/layouts/utils/theme"
+import { useIntl, FormattedMessage } from "react-intl"
+import { Colors } from '@/components/layouts/utils/theme';
 
 const SecondPage = () => {
+  const intl = useIntl()
+
 	const [ dataBar, setDataBar ] = useState([]);
 	const [ dataPieSick, setdataPieSick ] = useState([]);
 	const [ dataPieKnow, setdataPieKnow ] = useState([]);
-  const [ dataPieContact, setdataPieContact ] = useState([]);
+	const [ dataPieContact, setdataPieContact ] = useState([]);
   const [ loading, setLoading ] = useState(false);
+  
 	const myHeaders = new Headers();
 	myHeaders.append('Content-Type', 'application/json');
 	let requestOptions;
@@ -27,10 +30,10 @@ const SecondPage = () => {
 			redirect: 'follow'
 		};
 	} catch (e) {
-		console.log(e);
+		console.error(e);
 	}
 	useEffect(() => {
-    setLoading(true);
+		setLoading(true);
 		fetch(`https://us-central1-covid-19-mindsdb.cloudfunctions.net/filterData`, requestOptions)
 			.then((res) => res.json())
 			.then((cases) => {
@@ -107,18 +110,18 @@ const SecondPage = () => {
 						value: cases.totalData - cases.contact_with_covid19,
 						color: 'hsl(213, 70%, 50%)'
 					}
-        ]);
-        setLoading(false);
+				]);
+				setLoading(false);
 			});
 	}, []);
 
 	const BarContainer = styled.div`display: grid;`;
-  
-  const SpinnerContainer = styled.div`
-   	display: block;
+
+	const SpinnerContainer = styled.div`
+		display: block;
 		margin: 0 auto;
-    padding-top: 100px;
-  `;
+		padding-top: 100px;
+	`;
 
 	const PieContainer = styled.div`
 		display: grid;
@@ -128,22 +131,31 @@ const SecondPage = () => {
 
 	return (
 		<ConditionalLayout>
+      {!loading && <MyResponsiveBar dataBar={dataBar} />}
 			<SEO title="More Information" />
-			<h1>More Information</h1>
+			<h1><FormattedMessage id="more.information" /></h1>
 			<BarContainer>
-				<h3>Síntomas comunes</h3>
-        <SpinnerContainer>
-				  <GridLoader size={15} margin={3} color={Colors.lightGreen} loading={loading} />
-        </SpinnerContainer>
-        {!loading && <MyResponsiveBar dataBar={dataBar} />}
+				<SpinnerContainer>
+					<h4>Síntomas comunes</h4>
+					<GridLoader size={15} margin={3} color={Colors.lightGreen} loading={loading} />
+				</SpinnerContainer>
 			</BarContainer>
-      {!loading &&
-        <PieContainer>
-				<Pie height={320} data={dataPieSick} />
-				<Pie height={320} data={dataPieKnow} />
-				<Pie height={320} data={dataPieContact} />
-			</PieContainer>
-      }
+			{!loading && (
+				<PieContainer>
+					<div>
+						<h4>Síntomas comunes</h4>
+						<Pie height={320} data={dataPieSick} />
+					</div>
+					<div>
+						<h4>Síntomas comunes</h4>
+						<Pie height={320} data={dataPieKnow} />
+					</div>
+					<div>
+						<h4>Síntomas comunes</h4>
+						<Pie height={320} data={dataPieContact} />
+					</div>
+				</PieContainer>
+			)}
 		</ConditionalLayout>
 	);
 };
