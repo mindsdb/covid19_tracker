@@ -47,6 +47,7 @@
     "react-mailchimp-subscribe": "^2.1.0",
     "react-redux": "^7.2.0",
     "react-slick": "^0.25.2",
+    "react-spinners": "^0.8.3",
     "react-svg-star-rating": "^1.1.5",
     "react-typography": "^0.16.19",
     "redux": "^4.0.5",
