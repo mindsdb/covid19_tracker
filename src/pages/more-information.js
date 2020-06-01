@@ -5,18 +5,18 @@ import { MyResponsiveBar } from '@/components/ui/Bar';
 import Pie from '@/components/ui/Pie';
 import GridLoader from 'react-spinners/GridLoader';
 import styled from '@emotion/styled';
-import { useIntl, FormattedMessage } from "react-intl"
+import { useIntl, FormattedMessage } from 'react-intl';
 import { Colors } from '@/components/layouts/utils/theme';
 
 const SecondPage = () => {
-  const intl = useIntl()
+	const intl = useIntl();
 
 	const [ dataBar, setDataBar ] = useState([]);
 	const [ dataPieSick, setdataPieSick ] = useState([]);
 	const [ dataPieKnow, setdataPieKnow ] = useState([]);
 	const [ dataPieContact, setdataPieContact ] = useState([]);
-  const [ loading, setLoading ] = useState(false);
-  
+	const [ loading, setLoading ] = useState(false);
+
 	const myHeaders = new Headers();
 	myHeaders.append('Content-Type', 'application/json');
 	let requestOptions;
@@ -126,35 +126,46 @@ const SecondPage = () => {
 	const PieContainer = styled.div`
 		display: grid;
 		justify-content: center;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(3, 400px);
 	`;
 
 	return (
 		<ConditionalLayout>
-      {!loading && <MyResponsiveBar dataBar={dataBar} />}
 			<SEO title="More Information" />
-			<h1><FormattedMessage id="more.information" /></h1>
-			<BarContainer>
-				<SpinnerContainer>
-					<h4>Síntomas comunes</h4>
-					<GridLoader size={15} margin={3} color={Colors.lightGreen} loading={loading} />
-				</SpinnerContainer>
-			</BarContainer>
+			<h1>
+				<FormattedMessage id="more.information" />
+			</h1>
+			<SpinnerContainer>
+				<GridLoader size={15} margin={3} color={Colors.lightGreen} loading={loading} />
+			</SpinnerContainer>
 			{!loading && (
 				<PieContainer>
 					<div>
-						<h4>Síntomas comunes</h4>
-						<Pie height={320} data={dataPieSick} />
+						<h4>
+							<FormattedMessage id="wizard.static.question1" />
+						</h4>
+						<h1 />
+						<Pie height={250} data={dataPieSick} />
 					</div>
 					<div>
-						<h4>Síntomas comunes</h4>
-						<Pie height={320} data={dataPieKnow} />
+						<h4>
+							<FormattedMessage id="know.covid.person" />
+						</h4>
+						<Pie height={250} data={dataPieKnow} />
 					</div>
 					<div>
-						<h4>Síntomas comunes</h4>
-						<Pie height={320} data={dataPieContact} />
+						<h4>
+							<FormattedMessage id="contact.covid.person" />
+						</h4>
+						<Pie height={250} data={dataPieContact} />
 					</div>
 				</PieContainer>
+			)}
+			{!loading && (
+				<BarContainer>
+					<h4>Síntomas comunes</h4>
+					<MyResponsiveBar dataBar={dataBar} />
+				</BarContainer>
 			)}
 		</ConditionalLayout>
 	);

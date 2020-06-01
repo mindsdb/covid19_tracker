@@ -113,5 +113,10 @@
   "nivo.graph.label3" : "Recovered",
   "nivo.graph.label4" : "Deaths",
 
-  "download.dataset" : "Download Dataset"
+  "download.dataset" : "Download Dataset",
+  
+  
+  "more.information" : "More Information",
+  "know.covid.person" : "Do you know someone with covid?",
+  "contact.covid.person" : "Have you had contact with someone with covid?"
 }

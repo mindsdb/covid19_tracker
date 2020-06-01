@@ -111,5 +111,8 @@
   "nivo.graph.label2" : "Activos",
   "nivo.graph.label3" : "Recuperados",
   "nivo.graph.label4" : "Muertos",
-  "download.dataset" : "Descargar Datos"
+  "download.dataset" : "Descargar Datos",
+  "more.information" : "Más Información",
+  "know.covid.person" : "¿Conoces a alquien con covid?",
+  "contact.covid.person" : "¿has tenido contacto con alquien con covid?"
 }
