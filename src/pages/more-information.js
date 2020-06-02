@@ -171,7 +171,7 @@ const SecondPage = () => {
 					setLoading(false);
 				});
 		},
-		[ intl, dataBar, dataPieSick, dataPieKnow, dataPieContact, loading, totalData ]
+		[ intl]
 	);
 
 	const BarContainer = styled.div`display: grid;`;

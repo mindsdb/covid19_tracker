@@ -6,7 +6,7 @@ import firebase from "gatsby-plugin-firebase"
 import { reset } from "redux-form"
 import { useIntl, FormattedMessage } from "react-intl"
 import Cookies from "js-cookie"
-import { Link } from 'gatsby-plugin-modal-routing';
+import { Link } from 'gatsby';
 
 import ShareThis from '@/components/ui/ShareThis'
 import SubscribeEmail from '@/components/ui/SubscribeEmail'
@@ -250,7 +250,9 @@ const TestPage = () => {
                             </Href>
                           </Description>
                           <MoreInformation>
-                            <Link to="/more-information/" asModal>Más información</Link>
+                            <Link to="/more-information/">
+                              <FormattedMessage id="more.information" />
+                            </Link>
                           </MoreInformation>
                         </div>
                       </div>
