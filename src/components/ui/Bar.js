@@ -2,16 +2,27 @@ import React from 'react';
 import { ResponsiveBar } from '@nivo/bar';
 
 export const MyResponsiveBar = ({ dataBar }) => {
-	console.log('MyResponsiveBar', dataBar);
 	return (
 		<div style={{ height: '300px' }}>
 			<ResponsiveBar
 				data={dataBar}
-				keys={[ 'breathing problems', 'cough', 'coronaryHeartDesease', 'diabetes', 'hypertension', 'smoker' ]}
+				keys={[
+					'breathing problems',
+					'cough',
+					'coronaryHeartDesease',
+					'diabetes',
+					'hypertension',
+					'diarrhea',
+					'fatigue',
+					'headache',
+					'nausea',
+					'fever',
+					'smoker'
+				]}
 				indexBy="symptoms"
-				margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
+				margin={{ top: 50, right: 50, bottom: 50, left: 60 }}
 				padding={0.3}
-				colors={{ scheme: 'nivo' }}
+				colors={[ '#5ab16d', '#e65861', '#70dbca', '#f7db8c', '#6751ae', '#7fd7b6', '#efacb0' ]}
 				defs={[]}
 				fill={[]}
 				borderColor={{ from: 'color', modifiers: [ [ 'darker', 1.6 ] ] }}
@@ -20,9 +31,8 @@ export const MyResponsiveBar = ({ dataBar }) => {
 				axisBottom={{
 					tickSize: 5,
 					tickPadding: 5,
-					tickRotation: 0,
-                    // legend: 'country',
-                    legend: 'symptoms',
+					tickRotation: -30,
+					legend: '',
 					legendPosition: 'middle',
 					legendOffset: 32
 				}}
@@ -36,31 +46,9 @@ export const MyResponsiveBar = ({ dataBar }) => {
 				}}
 				labelSkipWidth={12}
 				labelSkipHeight={12}
-				labelTextColor={{ from: 'color', modifiers: [ [ 'darker', 1.6 ] ] }}
-				legends={[
-					{
-						dataFrom: 'keys',
-						anchor: 'bottom-right',
-						direction: 'column',
-						justify: false,
-						translateX: 120,
-						translateY: 0,
-						itemsSpacing: 2,
-						itemWidth: 100,
-						itemHeight: 20,
-						itemDirection: 'left-to-right',
-						itemOpacity: 0.85,
-						symbolSize: 20,
-						effects: [
-							{
-								on: 'hover',
-								style: {
-									itemOpacity: 1
-								}
-							}
-						]
-					}
-				]}
+				labelTextColor={{ from: 'color', modifiers: [ [ 'darker', 2 ] ] }}
+				legends={[]}
+				isInteractive={false}
 				animate={true}
 				motionStiffness={90}
 				motionDamping={15}

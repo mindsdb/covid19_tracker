@@ -118,5 +118,8 @@
   
   "more.information" : "More Information",
   "know.covid.person" : "Do you know someone with covid?",
-  "contact.covid.person" : "Have you had contact with someone with covid?"
+  "contact.covid.person" : "Have you had contact with someone with covid?",
+  "common.symptoms" : "Common symptoms",
+  "common.good" : "Good",
+  "common.bad" : "Bad"
 }
