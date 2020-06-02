@@ -6,6 +6,7 @@ import firebase from "gatsby-plugin-firebase"
 import { reset } from "redux-form"
 import { useIntl, FormattedMessage } from "react-intl"
 import Cookies from "js-cookie"
+import { Link } from 'gatsby';
 
 import ShareThis from '@/components/ui/ShareThis'
 import SubscribeEmail from '@/components/ui/SubscribeEmail'
@@ -51,12 +52,12 @@ const BackgroundContent = ({ className, children }) => {
 
 const BackgroundContainer = styled(BackgroundContent)`
   width: 100%;
-  height: 90vh;
+  height: auto;
   background-repeat: repeat-y;
   margin-bottom: 10px;
 
   ${mq.md(css`
-    height: 90vh;
+    height: auto;
     margin-bottom: 60px;
   `)}
 `
@@ -70,8 +71,6 @@ const WizardContainer = styled.div`
   margin: 20px 0;
   padding: 30px;
   border-radius: 5px;
-  min-height: 560px;
-  max-height: 560px;
   overflow: auto;
   box-shadow: 4px 4px 11px -7px rgba(0, 0, 0, 0.8);
   border: solid 1px rgba(93, 105, 112, 0.3);
@@ -81,6 +80,20 @@ const WizardContainer = styled.div`
     overflow-x: hidden;
   `)}
 `
+
+const MoreInformation = styled.div`
+  width: 90%;
+  text-align: center;
+  margin: 0 auto 20px;
+  a {
+    color: ${Colors.lightGreen};
+    display: block;
+    margin: 30px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+`;
+
 const HighlightTitle = styled.span`
   color: white;
   margin: 40px 0 1% 0;
@@ -228,6 +241,7 @@ const TestPage = () => {
                             <FormattedMessage id="wizard.confirmed.title" />: <span>{covidData?.cases}</span>
                           </Title>
                           <br />
+                          
                           <Pie height={320} data={dataPie} />
                           <Description>
                             <FormattedMessage id="finish.left.text" />
@@ -235,6 +249,11 @@ const TestPage = () => {
                               <FormattedMessage id="download.dataset" />
                             </Href>
                           </Description>
+                          <MoreInformation>
+                            <Link to="/more-information/">
+                              <FormattedMessage id="more.information" />
+                            </Link>
+                          </MoreInformation>
                         </div>
                       </div>
                       <div className="col-xs-12 col-md-7">

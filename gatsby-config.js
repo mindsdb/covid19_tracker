@@ -15,6 +15,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     'gatsby-plugin-sass',
     'gatsby-plugin-emotion',
+    'gatsby-plugin-modal-routing',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
