@@ -117,5 +117,16 @@
   "contact.covid.person" : "¿has tenido contacto con alquien con covid?",
   "common.symptoms" : "Síntomas comunes",
   "common.good" : "Bien",
-  "common.bad" : "Mal"
+  "common.bad" : "Mal",
+  "common.fatigue" : "fatiga",
+  "common.headache" : "jaqueca",
+  "common.cough" : "tos",
+  "common.smoker" : "fumador",
+  "common.breathing" : "problemas respiratorios",
+  "common.diarrhea" : "diarrea",
+  "common.nausea" : "nauseas",
+  "common.fever" : "fiebre",
+  "common.hypertension" : "hipertensión",
+  "common.diabetes" : "diabetes",
+  "common.coronary" : "enfermedad coronaria"
 }

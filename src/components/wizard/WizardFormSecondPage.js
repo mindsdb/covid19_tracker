@@ -11,6 +11,7 @@ import validate from "./validate"
 import { Colors } from "@/components/layouts/utils/theme"
 import Button from "@/components/ui/Button"
 import { mq } from "@/components/layouts/utils/base"
+import { MexicoState } from "../../utils/MexicoState"
 
 const Form = styled.form`
   input {
@@ -45,13 +46,10 @@ const WizardFormSecondPage = props => {
   const [ countries, setCountries ] = useState([])
   const [ states, setStates ] = useState([])
   const [ cities, setCities ] = useState([])
+  const [ showCity, setshowCity ] = useState(true)
   const intl = useIntl()
 
   useEffect(() => {
-    getCountries()
-  }, [])
-
-  const getCountries = () => {
     fetch(`${process.env.GATSBY_COUNTRY_API}/countries/`, {
       headers: {
         'Authorization': `Bearer ${authToken}`,
@@ -60,7 +58,18 @@ const WizardFormSecondPage = props => {
     })
     .then(res => res.json())
     .then(countries =>  setCountries(countries))
-  }
+  }, [authToken])
+
+  // const getCountries = () => {
+  //   fetch(`${process.env.GATSBY_COUNTRY_API}/countries/`, {
+  //     headers: {
+  //       'Authorization': `Bearer ${authToken}`,
+  //       'Accept': 'application/json'
+  //     }
+  //   })
+  //   .then(res => res.json())
+  //   .then(countries =>  setCountries(countries))
+  // }
 
   const getState = (state) => {
     fetch(`${process.env.GATSBY_COUNTRY_API}/states/${state}`, {
@@ -71,6 +80,7 @@ const WizardFormSecondPage = props => {
     })
     .then(res => res.json())
     .then(states =>  setStates(states))
+    .catch(e => console.error(e))
   }
 
   const getCity = (city) => {
@@ -82,7 +92,11 @@ const WizardFormSecondPage = props => {
       }
     })
     .then(res => res.json())
-    .then(cities =>  setCities(cities))
+    .then(cities =>  {
+      const citiesList = city !== "Estado de Mexico" ? cities : MexicoState;
+      setshowCity(citiesList.length > 0)
+      setCities(citiesList)
+    })
   }
 
   return (
@@ -110,14 +124,16 @@ const WizardFormSecondPage = props => {
         onChange={(e) => getCity(e.target.value)}
         label={<strong>{intl.formatMessage({ id: "common.state" })}:</strong>}
       />
-      <Field 
-        name="city"
-        alias="city" 
-        type="select"
-        data={cities}
-        component={renderField}
-        label={<strong>{intl.formatMessage({ id: "common.city" })}:</strong>}
-      />
+      {showCity &&
+        <Field 
+          name="city"
+          alias="city" 
+          type="select"
+          data={cities}
+          component={renderField}
+          label={<strong>{intl.formatMessage({ id: "common.city" })}:</strong>}
+        />
+      }
       <Field
         name="postalcode"
         type="text"

@@ -181,13 +181,20 @@ const TestPage = () => {
   //   setMapsData(data)
   // }
 
+  const validateAnswers = (values) => {
+    if (values.city === 'Seleccionar' && values.state === "Distrito Federal") {
+      values.city = 'Ciudad de Mexico'
+    }
+    return values
+  }
+
   const setAnswerData = async (values, dispatch) => {
     // values = flattenObject({ ...values, mapsData })
-
-    if (values) {
+    const answers = validateAnswers(values);
+    if (answers) {
       const answersCollection = firebase.firestore().collection("answers")
       const result = await answersCollection.add({
-        ...values,
+        ...answers,
         submittedDate: new Date(),
       })
 
