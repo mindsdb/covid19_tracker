@@ -60,17 +60,6 @@ const WizardFormSecondPage = props => {
     .then(countries =>  setCountries(countries))
   }, [authToken])
 
-  // const getCountries = () => {
-  //   fetch(`${process.env.GATSBY_COUNTRY_API}/countries/`, {
-  //     headers: {
-  //       'Authorization': `Bearer ${authToken}`,
-  //       'Accept': 'application/json'
-  //     }
-  //   })
-  //   .then(res => res.json())
-  //   .then(countries =>  setCountries(countries))
-  // }
-
   const getState = (state) => {
     fetch(`${process.env.GATSBY_COUNTRY_API}/states/${state}`, {
       headers: {
