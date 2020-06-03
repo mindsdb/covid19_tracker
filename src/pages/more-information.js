@@ -142,16 +142,16 @@ const SecondPage = () => {
 					]);
 					setdataPieKnow([
 						{
-							id: intl.formatMessage({ id: 'common.no' }),
-							label: `${(cases.know_someone_with_covid19 / cases.totalData * 100).toFixed(2)}%`,
-							value: cases.totalData - cases.know_someone_with_covid19,
-							color: 'hsl(213, 70%, 50%)'
-						},
-						{
 							id: intl.formatMessage({ id: 'common.yes' }),
 							label: `${(cases.know_someone_with_covid19 / cases.totalData * 100).toFixed(2)}%`,
 							value: cases.know_someone_with_covid19,
 							color: 'hsl(176, 65%, 58%)'
+						},
+						{
+							id: intl.formatMessage({ id: 'common.no' }),
+							label: `${(cases.know_someone_with_covid19 / cases.totalData * 100).toFixed(2)}%`,
+							value: cases.totalData - cases.know_someone_with_covid19,
+							color: 'hsl(213, 70%, 50%)'
 						}
 					]);
 					setdataPieContact([
@@ -191,7 +191,7 @@ const SecondPage = () => {
 	const WizardContainer = styled.div`
 		background: white;
 		margin: 20px 0;
-		padding: 30px;
+		padding: 30px 30px 10px 30px;
 		border-radius: 5px;
 		overflow: auto;
 		box-shadow: 4px 4px 11px -7px rgba(0, 0, 0, 0.8);
@@ -234,18 +234,19 @@ const SecondPage = () => {
 	const ResultTittle = styled.h1`
 		text-align: center;
 		font-family: "Rubik", sans-serif;
+		color: ${Colors.mirage};
 		margin-bottom: 35px;
 	`;
 
 	const GraphTitle = styled.h4`
 		font-family: "Rubik", sans-serif;
-		color: #2c263f;
+		color: ${Colors.mirage};
 		margin: 0;
 	`;
 
 	const GraphSubTitle = styled.span`
 		font-family: "Rubik", sans-serif;
-		color: #2c263f;
+		color: ${Colors.mirage};
 		margin: 5px 0;
 		font-size: 14px;
 	`;
