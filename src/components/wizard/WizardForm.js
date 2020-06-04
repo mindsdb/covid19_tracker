@@ -45,6 +45,8 @@ const WizardForm = props => {
     const stepProps = feeling ? questions_second.find(item => page === item.page) 
       : questions.find(item => page === item.page)
 
+    console.log('stepProps', stepProps);
+    console.log('feeling', feeling);
     if (stepProps && stepProps.page) {
       return (
         <WizardFormDynamicPage

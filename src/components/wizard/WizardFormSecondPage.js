@@ -12,6 +12,7 @@ import { Colors } from "@/components/layouts/utils/theme"
 import Button from "@/components/ui/Button"
 import { mq } from "@/components/layouts/utils/base"
 import { MexicoState } from "../../utils/MexicoState"
+import { Gender, Age } from "./QuestionsSecondPage";
 
 const Form = styled.form`
   input {
@@ -130,6 +131,24 @@ const WizardFormSecondPage = props => {
         component={renderField}
         label={<strong>{intl.formatMessage({ id: "common.postalcode" })}:</strong>}
       />
+      
+      <Field 
+          name="answer"
+          alias="answer" 
+          type="select"
+          data={Gender.options}
+          component={renderField}
+          label={<strong>{intl.formatMessage({ id: Gender.question })}:</strong>}
+        />
+
+      <Field 
+          name="answer"
+          alias="answer" 
+          type="select"
+          data={Age.options}
+          component={renderField}
+          label={<strong>{intl.formatMessage({ id: Age.question })}:</strong>}
+        />
 
       <ButtonContainer>
         <Button

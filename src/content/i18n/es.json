@@ -56,6 +56,13 @@
   "wizard.static.question2": "¿Cual es tu ubicación?",
   "wizard.static.question2.note": "Esta información es anónima y solo es utilizada para fines estadísticos. Si pones tu dirección solo registraremos la colonia/barrio",
 
+  "wizard.static.question24": "¿Cuál es tu edad?",
+  "common.age1": "15 o menos",
+  "common.age2": "16 - 30",
+  "common.age3" : "31 - 50",
+  "common.age4" : "51 - 60",
+  "common.age5" : "Más de 65",
+
   "wizard.dynamic.question1": "¿Fumas?",
   "wizard.dynamic.question2": "¿Tienes hipertensión? (Presión arterial alta)",
   "wizard.dynamic.question3": "¿Tienes diabetes? (Tipo 1 o 2)",
