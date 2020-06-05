@@ -93,7 +93,7 @@ const WizardFormSecondPage = props => {
     <Form onSubmit={handleSubmit}>
 
       <Title marginBottom="30px" max="10" min="25" color={Colors.mirage} >
-       <FormattedMessage id="wizard.static.question2" />
+       <FormattedMessage id="common.data.demo" />
       </Title>
 
       <Field 

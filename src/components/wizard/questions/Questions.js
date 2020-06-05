@@ -203,9 +203,9 @@ export const FeelsBadQuestions = [
 		]
 	},
 	{
-		page: 4,
-		isLastStep: true,
-		title: 'common.acquaintances',
+		page: 5,
+    title: 'common.acquaintances',
+    isLastStep: true,
 		questions: [
 			{
 				page: 21,

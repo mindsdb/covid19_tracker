@@ -140,6 +140,7 @@
   "common.hypertension" : "hypertension",
   "common.diabetes" : "diabetes",
   "common.coronary" : "coronary Heart Desease",
+  "common.data.demo": "Demographic data",
 
   "common.care" : "Care and prevention",
   "common.acquaintances": "Acquaintances",

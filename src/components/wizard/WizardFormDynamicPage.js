@@ -31,6 +31,7 @@ const RadioOptions = styled.div`
   flex-flow: wrap;
 
   label {
+    display: flex;
     margin-top: 10px;
   }
 `
