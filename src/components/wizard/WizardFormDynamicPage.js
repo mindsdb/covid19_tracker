@@ -21,13 +21,10 @@ const RadioContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-  ${mq.md(css`
-    height: 400px;
-  `)}
 `
 const RadioOptions = styled.div`
-  margin: 40px auto;
-  margin-bottom: 20px;
+  margin: 20px 0 20px 25px;
+  margin-bottom: 10px;
   display: flex;
   width: 250px;
   justify-content: space-between;
@@ -68,11 +65,16 @@ const CustomInputText = css`
   display: block;
 `
 const QuestionContainer = styled.div`
-  text-align: center;
+  text-align: left;
+  margin-top: 10px;
 
   span {
     font-weight: 900;
-    font-size: 32px;
+    font-size: 1.2rem;
+    font-family: "Rubik", sans-serif;
+    line-height: 1.5;
+    color: #2c263f;
+
   }
 `
 const RequieredSpan = styled.p`
@@ -83,6 +85,8 @@ const RequieredSpan = styled.p`
 
 const TitleQuestion = styled.span`
   color: ${Colors.mirage};
+  font-family: "Rubik", sans-serif;
+  margin-top: 10px;
 `
 
 
@@ -96,23 +100,24 @@ const WizardFormDynamicPage = props => {
     stepProps = {},
     pristine,
     submitting,
+    section = []
   } = props
   
   const intl = useIntl()
 
-  const validateField = () => {
+  const validateField = (section) => {
     if (stepProps.type === 'radio') {
       return (
         <QuestionContainer>
-          <TitleQuestion><FormattedMessage id={stepProps.question} /></TitleQuestion>
+          <TitleQuestion><FormattedMessage id={section.question} /></TitleQuestion>
           <RadioContainer>
             <RadioOptions>
               {
-                stepProps.options.map((item, idx) => (
+                section.options.map((item, idx) => (
                   <Label htmlFor={item} key={idx}>
                     <Field
                       id={idx}
-                      name={stepProps.name}
+                      name={section.name}
                       component="input"
                       type="radio"
                       value={intl.formatMessage({ id: item })}
@@ -122,7 +127,7 @@ const WizardFormDynamicPage = props => {
                 ))
               }
             </RadioOptions>
-            <Field name={stepProps.name} component={renderError} />
+            <Field name={section.name} component={renderError} />
           </RadioContainer>
         </QuestionContainer>
       )
@@ -140,12 +145,15 @@ const WizardFormDynamicPage = props => {
       )
     }
   }
-
   return (
     <Form onSubmit={handleSubmit}>
-      {
-        validateField()
-      }
+      <QuestionContainer>
+      {section.questions.map((sections, idx) => (
+        <div key={idx}>
+          {validateField(sections)}
+        </div>
+      ))}
+      </QuestionContainer>
       <ButtonContainer>
         <Button
           stylesType="common"
@@ -163,7 +171,7 @@ const WizardFormDynamicPage = props => {
           disabled={pristine || submitting}
         >
           {
-            stepProps.isLastStep
+            section.isLastStep
               ? <FormattedMessage id="wizard.submit.button" />
               : <FormattedMessage id="wizard.next.button" />
           }

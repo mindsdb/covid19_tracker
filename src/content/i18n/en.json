@@ -139,6 +139,14 @@
   "common.fever" : "fever",
   "common.hypertension" : "hypertension",
   "common.diabetes" : "diabetes",
-  "common.coronary" : "coronary Heart Desease"
+  "common.coronary" : "coronary Heart Desease",
 
+  "common.care" : "Care and prevention",
+  "common.acquaintances": "Acquaintances",
+  "common.health": "Health",
+
+
+  "wizard.static.question25": "Do you try to be at home all the time?",
+  "wizard.static.question26": "Do you wash your hands or use alcohol frequently?",
+  "wizard.dynamic.question27": "Do you know of anyone who has died from COVID-19?"
 }

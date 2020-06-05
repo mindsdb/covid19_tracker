@@ -12,7 +12,7 @@ import { Colors } from "@/components/layouts/utils/theme"
 import Button from "@/components/ui/Button"
 import { mq } from "@/components/layouts/utils/base"
 import { MexicoState } from "../../utils/MexicoState"
-import { Gender, Age } from "./QuestionsSecondPage";
+import { Gender, Age } from "./questions/QuestionsSecondPage";
 
 const Form = styled.form`
   input {
@@ -133,7 +133,7 @@ const WizardFormSecondPage = props => {
       />
       
       <Field 
-          name="answer"
+          name="gender"
           alias="answer" 
           type="select"
           data={Gender.options}
@@ -142,7 +142,7 @@ const WizardFormSecondPage = props => {
         />
 
       <Field 
-          name="answer"
+          name="age"
           alias="answer" 
           type="select"
           data={Age.options}

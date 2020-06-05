@@ -1,5 +1,4 @@
 import React from 'react'
-// import { useIntl } from 'react-intl'
 
 import styled from '@emotion/styled'
 import { Colors } from '@/components/layouts/utils/theme'
@@ -26,8 +25,6 @@ const FieldContainer = styled.div`
 `
 
 const renderField = ({ input, alias, label, placeholder, data, type, meta: { touched, error } }) => {
-  // const intl = useIntl()
-
   return (
     <FieldContainer error={touched && error}>
       <label>{label}</label>
@@ -42,20 +39,6 @@ const renderField = ({ input, alias, label, placeholder, data, type, meta: { tou
                 value={item[`${alias}_name`]}
               >
                 {item[`${alias}_name`]}
-              </option>
-            )}
-          </Select>
-        : type === 'renderInt' ? 
-          <Select {...input} placeholder={placeholder || label}>
-            <option selected>Seleccionar</option>
-            {data?.map((item, idx) => 
-              <option 
-                key={idx} 
-                id={item.country_phone_code} 
-                value={item[`${alias}_name`]}
-              >
-                {/* {intl.formatMessage({ id: item[`${alias}_name`]})} */}
-                Holo
               </option>
             )}
           </Select>
