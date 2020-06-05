@@ -49,8 +49,6 @@ const WizardForm = props => {
     const section = feeling ? FeelGoodQuestions.find(item => item.page === page)
       : FeelsBadQuestions.find(item => item.page === page)
 
-      console.log(section);
-
     if (section && section.page) {
       return (
         <WizardFormDynamicPage

@@ -5,6 +5,7 @@ import { css } from '@emotion/core'
 import { useIntl, FormattedMessage } from 'react-intl'
 
 import validate from './validate'
+import Title from "@/components/ui/Title"
 import renderField from './renderField'
 import { Colors } from '@/components/layouts/utils/theme'
 import Button from '@/components/ui/Button'
@@ -149,6 +150,10 @@ const WizardFormDynamicPage = props => {
   return (
     <Form onSubmit={handleSubmit}>
       <QuestionContainer>
+      {console.log('===>', section)}
+      <Title marginBottom="30px" max="10" min="25" color={Colors.mirage} >
+       <FormattedMessage id={section.title} />
+      </Title>
       {section.questions.map((sections, idx) => (
         <div key={idx}>
           {validateField(sections)}
