@@ -56,6 +56,13 @@
   "wizard.static.question2": "¿Cual es tu ubicación?",
   "wizard.static.question2.note": "Esta información es anónima y solo es utilizada para fines estadísticos. Si pones tu dirección solo registraremos la colonia/barrio",
 
+  "wizard.static.question24": "¿Cuál es tu edad?",
+  "common.age1": "15 o menos",
+  "common.age2": "16 - 30",
+  "common.age3" : "31 - 50",
+  "common.age4" : "51 - 60",
+  "common.age5" : "Más de 65",
+
   "wizard.dynamic.question1": "¿Fumas?",
   "wizard.dynamic.question2": "¿Tienes hipertensión? (Presión arterial alta)",
   "wizard.dynamic.question3": "¿Tienes diabetes? (Tipo 1 o 2)",
@@ -75,7 +82,7 @@
   "wizard.dynamic.question16": "¿Usas cubrebocas cuando sales de casa?",
   "wizard.dynamic.question17": "¿Te lavas las manos o usas gel frecuentemente?",
   "wizard.dynamic.question18": "¿Has estado en contacto con personas diagnosticadas con COVID-19?",
-  "wizard.dynamic.question19": "¿Conoces personalmente a alguien que haya sido diagnosticado con COVID-19?",
+  "wizard.dynamic.question19": "¿Tienes familiares o conocidos diagnosticados con COVID-19?",
   "wizard.dynamic.question20": "¿Has asistido a lugares muy concurridos o de mayor riesgo? (Aeropuertos, mercados, transporte público, etc.)",
   "wizard.dynamic.question21": "¿Te alimentas saludablemente?",
   "wizard.dynamic.question22": "¿Limpias con frecuencia las áreas de mayor contacto?",
@@ -128,5 +135,14 @@
   "common.fever" : "fiebre",
   "common.hypertension" : "hipertensión",
   "common.diabetes" : "diabetes",
-  "common.coronary" : "enfermedad coronaria"
+  "common.coronary" : "enfermedad coronaria",
+  "common.care" : "Cuidado y prevención",
+  "common.acquaintances": "Conocidos",
+  "common.health": "Salud",
+  "common.data.demo": "Datos Demográficos",
+
+
+  "wizard.static.question25": "¿Procuras estar todo el tiempo en casa?",
+  "wizard.static.question26": "¿Te lavas las manos o usas alcohol en gel frecuentemente?",
+  "wizard.dynamic.question27": "¿Sabes de alguien que haya fallecido a causa del COVID-19?"
 }

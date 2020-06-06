@@ -670,16 +670,22 @@ input[type='radio'] {
 input[type='radio'] {
   cursor: pointer;
   border: #BBC1E1;
-  
-  &::after {
-    content: '✓';
-    color: transparent;
-  }
+  width: 13px;
+  height: 21px;
+  position: relative;
 }
 
 input[type='radio']:checked {
   cursor: pointer;
   background: #40bb7d;
   background-color: #40bb7d;
+
+  &::after {
+    content: '✓';
+    color: #fff;
+    position: absolute;
+    top: 0px;
+    left: 5px;
+  }
   
 }

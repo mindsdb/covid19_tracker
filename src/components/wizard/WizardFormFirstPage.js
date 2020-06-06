@@ -33,6 +33,7 @@ const RadioOptions = styled.div`
   justify-content: space-between;
 
   label {
+    align-self: center;
   }
 `
 const Label = styled.label`

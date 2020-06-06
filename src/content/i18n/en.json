@@ -67,6 +67,13 @@
   "wizard.dynamic.question9": "Do you have a headache and are you experiencing any muscle or joint pain?",
   "wizard.dynamic.question10": "Do you have any nausea or vomiting?",
   "wizard.dynamic.question11": "Do you have diarrhea?",
+
+  "wizard.static.question24": "What is your age?",
+  "common.age1": "15 or less",
+  "common.age2": "16 - 30",
+  "common.age3" : "31 - 50",
+  "common.age4" : "51 - 60",
+  "common.age5" : "more than 65",
   
   "wizard.dynamic.question12": "What is your gender?",
   "wizard.dynamic.question13": "How old are you?",
@@ -132,6 +139,15 @@
   "common.fever" : "fever",
   "common.hypertension" : "hypertension",
   "common.diabetes" : "diabetes",
-  "common.coronary" : "coronary Heart Desease"
+  "common.coronary" : "coronary Heart Desease",
+  "common.data.demo": "Demographic data",
 
+  "common.care" : "Care and prevention",
+  "common.acquaintances": "Acquaintances",
+  "common.health": "Health",
+
+
+  "wizard.static.question25": "Do you try to be at home all the time?",
+  "wizard.static.question26": "Do you wash your hands or use alcohol frequently?",
+  "wizard.dynamic.question27": "Do you know of anyone who has died from COVID-19?"
 }
