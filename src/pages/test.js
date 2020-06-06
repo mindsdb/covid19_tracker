@@ -6,6 +6,7 @@ import firebase from "gatsby-plugin-firebase"
 import { reset } from "redux-form"
 import { useIntl, FormattedMessage } from "react-intl"
 import Cookies from "js-cookie"
+import { Link } from 'gatsby';
 
 import ShareThis from '@/components/ui/ShareThis'
 import SubscribeEmail from '@/components/ui/SubscribeEmail'
@@ -16,8 +17,7 @@ import { css } from "@emotion/core"
 import WizardForm from "@/components/wizard/WizardForm"
 import Title from "@/components/ui/Title"
 import SEO from "../components/seo"
-import flattenObject from "../lib/utils"
-
+// import flattenObject from "../lib/utils"
 
 const BackgroundContent = ({ className, children }) => {
   return (
@@ -52,12 +52,12 @@ const BackgroundContent = ({ className, children }) => {
 
 const BackgroundContainer = styled(BackgroundContent)`
   width: 100%;
-  height: 90vh;
+  height: auto;
   background-repeat: repeat-y;
   margin-bottom: 10px;
 
   ${mq.md(css`
-    height: 90vh;
+    height: auto;
     margin-bottom: 60px;
   `)}
 `
@@ -71,8 +71,6 @@ const WizardContainer = styled.div`
   margin: 20px 0;
   padding: 30px;
   border-radius: 5px;
-  min-height: 560px;
-  max-height: 560px;
   overflow: auto;
   box-shadow: 4px 4px 11px -7px rgba(0, 0, 0, 0.8);
   border: solid 1px rgba(93, 105, 112, 0.3);
@@ -82,6 +80,20 @@ const WizardContainer = styled.div`
     overflow-x: hidden;
   `)}
 `
+
+const MoreInformation = styled.div`
+  width: 90%;
+  text-align: center;
+  margin: 0 auto 20px;
+  a {
+    color: ${Colors.lightGreen};
+    display: block;
+    margin: 30px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+`;
+
 const HighlightTitle = styled.span`
   color: white;
   margin: 40px 0 1% 0;
@@ -118,8 +130,9 @@ const paddingMessage = css`
 
 const TestPage = () => {
   const intl = useIntl()
+
+  // const [mapsData, setMapsData] = useState()
   const [showForm, setShowForm] = useState(true)
-  const [mapsData, setMapsData] = useState()
   const [covidData, setCovidData] = useState([])
   const [country, setCountry] = useState()
   const [dataPie, setDataPie] = useState([])
@@ -164,16 +177,24 @@ const TestPage = () => {
 
   }, [country, totalCensu, intl])
 
-  const updateMapsData = data => {
-    setMapsData(data)
+  // const updateMapsData = data => {
+  //   setMapsData(data)
+  // }
+
+  const validateAnswers = (values) => {
+    if (values.city === 'Seleccionar' && values.state === "Distrito Federal") {
+      values.city = 'Ciudad de Mexico'
+    }
+    return values
   }
 
   const setAnswerData = async (values, dispatch) => {
-    values = flattenObject({ ...values, mapsData })
-    if (values) {
+    // values = flattenObject({ ...values, mapsData })
+    const answers = validateAnswers(values);
+    if (answers) {
       const answersCollection = firebase.firestore().collection("answers")
       const result = await answersCollection.add({
-        ...values,
+        ...answers,
         submittedDate: new Date(),
       })
 
@@ -214,7 +235,7 @@ const TestPage = () => {
               {showForm ? (
                 <WizardContainer>
                   <WizardForm
-                    updateMapsData={updateMapsData}
+                    // updateMapsData={updateMapsData}
                     onSubmit={setAnswerData}
                   />
                 </WizardContainer>
@@ -227,6 +248,7 @@ const TestPage = () => {
                             <FormattedMessage id="wizard.confirmed.title" />: <span>{covidData?.cases}</span>
                           </Title>
                           <br />
+                          
                           <Pie height={320} data={dataPie} />
                           <Description>
                             <FormattedMessage id="finish.left.text" />
@@ -234,6 +256,11 @@ const TestPage = () => {
                               <FormattedMessage id="download.dataset" />
                             </Href>
                           </Description>
+                          <MoreInformation>
+                            <Link to="/more-information/">
+                              <FormattedMessage id="more.information" />
+                            </Link>
+                          </MoreInformation>
                         </div>
                       </div>
                       <div className="col-xs-12 col-md-7">

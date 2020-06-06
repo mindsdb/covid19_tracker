@@ -20,6 +20,7 @@ const logoContainer = css`
   }
 `
 const Container = styled.footer`
+  padding: 20px, 0;
   width: 100%;
   height: 260px;
   color: ${Colors.silverChalice};

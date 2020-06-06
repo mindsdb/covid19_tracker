@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import { Field, reduxForm } from 'redux-form'
 import styled from "@emotion/styled"
 import { css } from "@emotion/core"
 import { useIntl, FormattedMessage } from "react-intl"
+import GooglePlacesAutocomplete, {
+  geocodeByPlaceId,
+} from "react-google-places-autocomplete"
 import "react-google-places-autocomplete/dist/index.min.css"
 
 import renderField from './renderField'
@@ -11,8 +14,7 @@ import validate from "./validate"
 import { Colors } from "@/components/layouts/utils/theme"
 import Button from "@/components/ui/Button"
 import { mq } from "@/components/layouts/utils/base"
-import { MexicoState } from "../../utils/MexicoState"
-import { Gender, Age } from "./questions/QuestionsSecondPage";
+import Map from "@/components/ui/Map"
 
 const Form = styled.form`
   input {
@@ -43,87 +45,77 @@ const ButtonContainer = styled.div`
 `
 
 const WizardFormSecondPage = props => {
-  const { handleSubmit, previousPage, authToken } = props
-  const [ countries, setCountries ] = useState([])
-  const [ states, setStates ] = useState([])
-  const [ cities, setCities ] = useState([])
-  const [ showCity, setshowCity ] = useState(true)
+  const { handleSubmit, previousPage, updateMapsData } = props
+
   const intl = useIntl()
 
-  useEffect(() => {
-    fetch(`${process.env.GATSBY_COUNTRY_API}/countries/`, {
-      headers: {
-        'Authorization': `Bearer ${authToken}`,
-        'Accept': 'application/json'
-      }
-    })
-    .then(res => res.json())
-    .then(countries =>  setCountries(countries))
-  }, [authToken])
+  const [lat, setLat] = useState()
+  const [lng, setLng] = useState()
+  const [addressData, setaddressData] = useState()
 
-  const getState = (state) => {
-    fetch(`${process.env.GATSBY_COUNTRY_API}/states/${state}`, {
-      headers: {
-        'Accept': 'application/json',
-        'Authorization': `Bearer ${authToken}`
-      }
-    })
-    .then(res => res.json())
-    .then(states =>  setStates(states))
-    .catch(e => console.error(e))
+  const validateField = () => {
+    return addressData
+      ? !Object.keys(addressData).every(x => addressData[x] !== "")
+      : true
   }
 
-  const getCity = (city) => {
-    fetch(`${process.env.GATSBY_COUNTRY_API}/cities/${city}`, {
-      method: 'GET',
-      headers: {
-        'Accept': 'application/json',
-        'Authorization': `Bearer ${authToken}`
+  const getAddressInfo = data => {
+    setTimeout(() => {
+      if (data.place_id) {
+        geocodeByPlaceId(data.place_id)
+          .then(results => {
+            const data = {}
+
+            results[0].address_components.forEach(x => {
+              if (x.types.includes("locality")) {
+                data.city = x.long_name.normalize ("NFKD").replace (/[\u0300-\u036F]/g, "")
+              } else if (x.types.includes("country")) {
+                data.country = x.long_name.normalize ("NFKD").replace (/[\u0300-\u036F]/g, "")
+              } else if (x.types.includes("administrative_area_level_1")) {
+                data.state = x.long_name.normalize ("NFKD").replace (/[\u0300-\u036F]/g, "")
+              } else if (x.types.indexOf("sublocality") > -1 || x.types.indexOf("neighborhood") > -1) {
+                data.neighborhood = x.long_name.normalize ("NFKD").replace (/[\u0300-\u036F]/g, "")
+              } else if (x.types.includes("postal_code")) {
+                data.postal_code = x.long_name
+              }
+            })
+
+            const geo = results[0].geometry.location
+
+            updateMapsData(data)
+            setaddressData(data)
+            setLat(geo.lat())
+            setLng(geo.lng())
+          })
+          .catch(error => console.error(error))
       }
-    })
-    .then(res => res.json())
-    .then(cities =>  {
-      const citiesList = city !== "Estado de Mexico" ? cities : MexicoState;
-      setshowCity(citiesList.length > 0)
-      setCities(citiesList)
-    })
+    }, 500)
   }
 
   return (
     <Form onSubmit={handleSubmit}>
-
       <Title marginBottom="30px" max="10" min="25" color={Colors.mirage} >
-       <FormattedMessage id="common.data.demo" />
+       <FormattedMessage id="wizard.static.question2" />
       </Title>
 
       <Field 
         name="country"
-        alias="country"
         type="select"
-        data={countries}
         component={renderField}
-        onChange={(e) => getState(e.target.value)}
         label={<strong>{intl.formatMessage({ id: "common.country" })}:</strong>}
       />
       <Field 
         name="state" 
-        alias="state"
         type="select"
-        data={states}
         component={renderField}
-        onChange={(e) => getCity(e.target.value)}
         label={<strong>{intl.formatMessage({ id: "common.state" })}:</strong>}
       />
-      {showCity &&
-        <Field 
-          name="city"
-          alias="city" 
-          type="select"
-          data={cities}
-          component={renderField}
-          label={<strong>{intl.formatMessage({ id: "common.city" })}:</strong>}
-        />
-      }
+      <Field 
+        name="city" 
+        type="select"
+        component={renderField}
+        label={<strong>{intl.formatMessage({ id: "common.city" })}:</strong>}
+      />
       <Field
         name="postalcode"
         type="text"
@@ -131,24 +123,19 @@ const WizardFormSecondPage = props => {
         component={renderField}
         label={<strong>{intl.formatMessage({ id: "common.postalcode" })}:</strong>}
       />
-      
-      <Field 
-          name="gender"
-          alias="answer" 
-          type="select"
-          data={Gender.options}
-          component={renderField}
-          label={<strong>{intl.formatMessage({ id: Gender.question })}:</strong>}
+
+      <span>
+       <FormattedMessage id="wizard.static.question2.note" />
+      </span>
+      <>
+        <GooglePlacesAutocomplete
+          apiKey={process.env.GATSBY_GOOGLE_MAPS_API_KEY}
+          placeholder={intl.formatMessage({ id: "googlemaps.placeholder" })}
+          onSelect={getAddressInfo}
         />
 
-      <Field 
-          name="age"
-          alias="answer" 
-          type="select"
-          data={Age.options}
-          component={renderField}
-          label={<strong>{intl.formatMessage({ id: Age.question })}:</strong>}
-        />
+        {lat & lng ? <Map lat={lat} lng={lng} /> : null}
+      </>
 
       <ButtonContainer>
         <Button
